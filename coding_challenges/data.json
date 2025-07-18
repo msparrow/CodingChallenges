@@ -1,0 +1,1202 @@
+[
+  {
+    "id": 1,
+    "title": "Two Sum",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\n\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\n\nYou can return the answer in any order.",
+    "optimal_solution": "The optimal solution uses a hash map to store the numbers we've seen and their indices. This allows us to check for the complement in O(1) time. The overall time complexity is O(n) and the space complexity is O(n)."
+  },
+  {
+    "id": 2,
+    "title": "Add Two Numbers",
+    "difficulty": "Medium",
+    "category": "Linked Lists",
+    "description": "You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.\n\nYou may assume the two numbers do not contain any leading zero, except the number 0 itself.",
+    "optimal_solution": "The optimal solution iterates through both linked lists, adding the digits and any carry-over from the previous addition. The time complexity is O(max(m, n)) where m and n are the lengths of the two lists, and the space complexity is O(max(m, n)) for the new list."
+  },
+  {
+    "id": 3,
+    "title": "Longest Substring Without Repeating Characters",
+    "difficulty": "Medium",
+    "category": "Strings",
+    "description": "Given a string s, find the length of the longest substring without repeating characters.",
+    "optimal_solution": "The optimal solution uses a sliding window approach with a hash map to keep track of the most recent index of each character. This allows us to find the longest substring in O(n) time and O(min(m, n)) space, where n is the length of the string and m is the size of the character set."
+  },
+  {
+    "id": 4,
+    "title": "Median of Two Sorted Arrays",
+    "difficulty": "Hard",
+    "category": "Arrays",
+    "description": "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\n\nThe overall run time complexity should be O(log (m+n)).",
+    "optimal_solution": "The optimal solution uses a binary search approach on the smaller of the two arrays to find the correct partition that divides the combined array into two equal halves. This achieves the required O(log(min(m, n))) time complexity with O(1) space complexity."
+  },
+  {
+    "id": 5,
+    "title": "Reverse Integer",
+    "difficulty": "Easy",
+    "category": "Math",
+    "description": "Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.",
+    "optimal_solution": "The optimal solution reverses the integer mathematically by repeatedly taking the last digit and adding it to the reversed number. We also need to check for integer overflow before returning the result. The time complexity is O(log(x)) and the space complexity is O(1)."
+  },
+  {
+    "id": 6,
+    "title": "Zigzag Conversion",
+    "difficulty": "Medium",
+    "category": "Strings",
+    "description": "The string \"PAYPALISHIRING\" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)\n\nP   A   H   N\nA P L S I I G\nY   I   R\n\nAnd then read line by line: \"PAHNAPLSIIGYIR\"\n\nWrite the code that will take a string and make this conversion given a number of rows.",
+    "optimal_solution": "The optimal solution iterates through the string, calculating the row for each character. The time complexity is O(n) and the space complexity is O(n)."
+  },
+  {
+    "id": 7,
+    "title": "Palindrome Number",
+    "difficulty": "Easy",
+    "category": "Math",
+    "description": "Given an integer x, return true if x is a palindrome, and false otherwise.",
+    "optimal_solution": "The optimal solution reverses the second half of the number and compares it to the first half. This avoids integer overflow and has a time complexity of O(log(x)) and a space complexity of O(1)."
+  },
+  {
+    "id": 8,
+    "title": "Container With Most Water",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).\n\nFind two lines that together with the x-axis form a container, such that the container contains the most water.\n\nReturn the maximum amount of water a container can store.",
+    "optimal_solution": "The optimal solution uses a two-pointer approach, starting from the widest container and moving the pointer with the shorter line inward. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 9,
+    "title": "Integer to Roman",
+    "difficulty": "Medium",
+    "category": "Math",
+    "description": "Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.\n\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\n\nFor example, 2 is written as II in Roman numeral, just two one's added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.\n\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\n\nI can be placed before V (5) and X (10) to make 4 and 9.\nX can be placed before L (50) and C (100) to make 40 and 90.\nC can be placed before D (500) and M (1000) to make 400 and 900.\n\nGiven an integer, convert it to a roman numeral.",
+    "optimal_solution": "The optimal solution uses a greedy approach with a pre-defined list of Roman numeral symbols and their corresponding values. The time complexity is O(1) because the input is limited to a certain range, and the space complexity is O(1)."
+  },
+  {
+    "id": 10,
+    "title": "3Sum",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.\n\nNotice that the solution set must not contain duplicate triplets.",
+    "optimal_solution": "The optimal solution sorts the array and then uses a two-pointer approach for each element to find the other two elements that sum to zero. This has a time complexity of O(n^2) and a space complexity of O(1) or O(n) depending on the sorting algorithm used."
+  },
+  {
+    "id": 11,
+    "title": "3Sum Closest",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given an integer array nums of length n and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.",
+    "optimal_solution": "The optimal solution sorts the array and then uses a two-pointer approach for each element to find the other two elements that have a sum closest to the target. This has a time complexity of O(n^2) and a space complexity of O(1) or O(n) depending on the sorting algorithm used."
+  },
+  {
+    "id": 12,
+    "title": "Letter Combinations of a Phone Number",
+    "difficulty": "Medium",
+    "category": "Strings",
+    "description": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order. A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.",
+    "optimal_solution": "The optimal solution uses a backtracking approach to recursively build the letter combinations. The time complexity is O(4^n * n) where n is the number of digits, and the space complexity is O(n) for the recursion stack."
+  },
+  {
+    "id": 13,
+    "title": "4Sum",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given an array nums of n integers, return an array of all the unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that: 0 <= a, b, c, d < n; a, b, c, and d are distinct; and nums[a] + nums[b] + nums[c] + nums[d] == target. You may return the answer in any order.",
+    "optimal_solution": "The optimal solution sorts the array and then uses a nested loop with a two-pointer approach to find the quadruplets. This has a time complexity of O(n^3) and a space complexity of O(1) or O(n) depending on the sorting algorithm used."
+  },
+  {
+    "id": 14,
+    "title": "Remove Nth Node From End of List",
+    "difficulty": "Medium",
+    "category": "Linked Lists",
+    "description": "Given the head of a linked list, remove the nth node from the end of the list and return its head.",
+    "optimal_solution": "The optimal solution uses a two-pointer approach. The first pointer is advanced n nodes ahead of the second pointer. Then, both pointers are moved together until the first pointer reaches the end of the list. The second pointer will then be at the node before the one to be removed. This has a time complexity of O(L) where L is the length of the list, and a space complexity of O(1)."
+  },
+  {
+    "id": 15,
+    "title": "Valid Parentheses",
+    "difficulty": "Easy",
+    "category": "Strings",
+    "description": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if: Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order. Every close bracket has a corresponding open bracket of the same type.",
+    "optimal_solution": "The optimal solution uses a stack to keep track of the open brackets. When a closing bracket is encountered, we check if it matches the top of the stack. This has a time complexity of O(n) and a space complexity of O(n) in the worst case."
+  },
+  {
+    "id": 16,
+    "title": "Merge Two Sorted Lists",
+    "difficulty": "Easy",
+    "category": "Linked Lists",
+    "description": "You are given the heads of two sorted linked lists list1 and list2. Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists. Return the head of the merged linked list.",
+    "optimal_solution": "The optimal solution uses a dummy head node and a pointer to build the new sorted list. It iterates through both lists, always appending the smaller of the two nodes to the new list. This has a time complexity of O(m + n) and a space complexity of O(1)."
+  },
+  {
+    "id": 17,
+    "title": "Generate Parentheses",
+    "difficulty": "Medium",
+    "category": "Strings",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.",
+    "optimal_solution": "The optimal solution uses a backtracking approach to recursively build the parentheses combinations. The time complexity is O(4^n / sqrt(n)) and the space complexity is O(n) for the recursion stack."
+  },
+  {
+    "id": 18,
+    "title": "Merge k Sorted Lists",
+    "difficulty": "Hard",
+    "category": "Linked Lists",
+    "description": "You are given an array of k linked-lists lists, each linked-list is sorted in ascending order. Merge all the linked-lists into one sorted linked-list and return it.",
+    "optimal_solution": "The optimal solution uses a min-heap to store the heads of the k lists. We repeatedly extract the minimum element from the heap and add it to our result list. This has a time complexity of O(N log k) where N is the total number of nodes and k is the number of lists, and a space complexity of O(k) for the heap."
+  },
+  {
+    "id": 19,
+    "title": "Swap Nodes in Pairs",
+    "difficulty": "Medium",
+    "category": "Linked Lists",
+    "description": "Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)",
+    "optimal_solution": "The optimal solution uses a dummy head node and a pointer to iterate through the list, swapping pairs of nodes as it goes. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 20,
+    "title": "Reverse Nodes in k-Group",
+    "difficulty": "Hard",
+    "category": "Linked Lists",
+    "description": "Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list. k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is. You may not alter the values in the list's nodes, only nodes themselves may be changed.",
+    "optimal_solution": "The optimal solution uses a recursive approach. We reverse the first k nodes, and then recursively call the function on the rest of the list. This has a time complexity of O(n) and a space complexity of O(k) for the recursion stack."
+  },
+  {
+    "id": 21,
+    "title": "Remove Duplicates from Sorted Array",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.",
+    "optimal_solution": "The optimal solution uses a two-pointer approach. One pointer iterates through the array, and the other points to the position of the next unique element. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 22,
+    "title": "Remove Element",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.",
+    "optimal_solution": "The optimal solution uses a two-pointer approach. One pointer iterates through the array, and the other points to the position where the next non-val element should be placed. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 23,
+    "title": "Implement strStr()",
+    "difficulty": "Easy",
+    "category": "Strings",
+    "description": "Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.",
+    "optimal_solution": "The optimal solution uses the Knuth-Morris-Pratt (KMP) algorithm, which preprocesses the needle to create a lookup table. This allows the search to be done in O(m + n) time, where m and n are the lengths of the needle and haystack, respectively. The space complexity is O(m) for the lookup table."
+  },
+  {
+    "id": 24,
+    "title": "Search Insert Position",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.",
+    "optimal_solution": "The optimal solution uses binary search to find the target or the insertion position. This has a time complexity of O(log n) and a space complexity of O(1)."
+  },
+  {
+    "id": 25,
+    "title": "Valid Sudoku",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules: Each row must contain the digits 1-9 without repetition. Each column must contain the digits 1-9 without repetition. Each of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9 without repetition.",
+    "optimal_solution": "The optimal solution uses three sets (or hash maps) to keep track of the numbers seen in each row, column, and 3x3 sub-box. This allows for a single pass through the board, resulting in a time complexity of O(1) (since the board size is fixed) and a space complexity of O(1)."
+  },
+  {
+    "id": 26,
+    "title": "Count and Say",
+    "difficulty": "Medium",
+    "category": "Strings",
+    "description": "The count-and-say sequence is a sequence of digit strings defined by the recursive formula: countAndSay(1) = \"1\". countAndSay(n) is the way you would \"say\" the digit string from countAndSay(n-1), which is then converted into a new digit string.",
+    "optimal_solution": "The optimal solution iteratively generates the next sequence from the previous one. The time complexity is difficult to analyze precisely but is related to the length of the generated strings. The space complexity is O(L) where L is the length of the longest string generated."
+  },
+  {
+    "id": 27,
+    "title": "Combination Sum",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given an array of distinct integers candidates and a target integer target, return a list of all unique combinations of candidates where the chosen numbers sum to target. You may return the combinations in any order. The same number may be chosen from candidates an unlimited number of times. Two combinations are unique if the frequency of at least one of the chosen numbers is different.",
+    "optimal_solution": "The optimal solution uses a backtracking approach to recursively find the combinations. The time complexity is difficult to analyze precisely but is related to the number of candidates and the target value. The space complexity is O(target) for the recursion stack."
+  },
+  {
+    "id": 28,
+    "title": "Combination Sum II",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sum to target. Each number in candidates may only be used once in the combination. Note: The solution set must not contain duplicate combinations.",
+    "optimal_solution": "The optimal solution sorts the candidates and then uses a backtracking approach to recursively find the combinations, skipping duplicates to avoid duplicate combinations in the result. The time complexity is difficult to analyze precisely but is related to the number of candidates and the target value. The space complexity is O(target) for the recursion stack."
+  },
+  {
+    "id": 29,
+    "title": "First Missing Positive",
+    "difficulty": "Hard",
+    "category": "Arrays",
+    "description": "Given an unsorted integer array nums, return the smallest missing positive integer.",
+    "optimal_solution": "The optimal solution uses the array itself as a hash map. We iterate through the array, placing each number in its correct position (e.g., 1 in index 0, 2 in index 1, etc.). Then, we iterate through the array again to find the first position where the number does not match the index. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 30,
+    "title": "Trapping Rain Water",
+    "difficulty": "Hard",
+    "category": "Arrays",
+    "description": "Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.",
+    "optimal_solution": "The optimal solution uses a two-pointer approach. We maintain two pointers, one at each end of the array, and two variables to keep track of the maximum height seen so far from each side. We move the pointer with the smaller maximum height inward, calculating the trapped water as we go. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 31,
+    "title": "Multiply Strings",
+    "difficulty": "Medium",
+    "category": "Strings",
+    "description": "Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string. Note: You must not use any built-in BigInteger library or convert the inputs to integers directly.",
+    "optimal_solution": "The optimal solution simulates multiplication by hand. We create an array to store the result of multiplying each digit of num1 by each digit of num2. Then, we iterate through this array, handling the carry-over to calculate the final product. The time complexity is O(m * n) and the space complexity is O(m + n)."
+  },
+  {
+    "id": 32,
+    "title": "Jump Game II",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "You are given a 0-indexed array of integers nums of length n. You are initially positioned at nums[0]. Each element nums[i] represents the maximum length of a forward jump from index i. In other words, if you are at nums[i], you can jump to any nums[i + j] where: 0 <= j <= nums[i] and i + j < n. Return the minimum number of jumps to reach nums[n - 1]. The test cases are generated such that you can always reach nums[n - 1].",
+    "optimal_solution": "The optimal solution uses a greedy approach. We keep track of the farthest reachable index and the number of jumps. In each jump, we iterate through the current reachable range and find the farthest we can reach in the next jump. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 33,
+    "title": "Permutations",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.",
+    "optimal_solution": "The optimal solution uses a backtracking approach to recursively build the permutations. The time complexity is O(n * n!) and the space complexity is O(n) for the recursion stack."
+  },
+  {
+    "id": 34,
+    "title": "Permutations II",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order.",
+    "optimal_solution": "The optimal solution sorts the input array and then uses a backtracking approach to recursively build the permutations, skipping duplicates to avoid duplicate permutations in the result. The time complexity is O(n * n!) and the space complexity is O(n) for the recursion stack."
+  },
+  {
+    "id": 35,
+    "title": "Rotate Image",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise). You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.",
+    "optimal_solution": "The optimal solution first transposes the matrix and then reverses each row. This results in a 90-degree clockwise rotation. The time complexity is O(n^2) and the space complexity is O(1)."
+  },
+  {
+    "id": 36,
+    "title": "Group Anagrams",
+    "difficulty": "Medium",
+    "category": "Strings",
+    "description": "Given an array of strings strs, group the anagrams together. You can return the answer in any order. An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+    "optimal_solution": "The optimal solution uses a hash map to group the anagrams. The key for each group is the sorted version of the string. We iterate through the input strings, sort each one, and add it to the corresponding group in the hash map. The time complexity is O(n * k log k) where n is the number of strings and k is the maximum length of a string, and the space complexity is O(n * k)."
+  },
+  {
+    "id": 37,
+    "title": "Pow(x, n)",
+    "difficulty": "Medium",
+    "category": "Math",
+    "description": "Implement pow(x, n), which calculates x raised to the power n (i.e., x^n).",
+    "optimal_solution": "The optimal solution uses exponentiation by squaring. This is a recursive approach where we calculate x^(n/2) and then square it. This has a time complexity of O(log n) and a space complexity of O(log n) for the recursion stack."
+  },
+  {
+    "id": 38,
+    "title": "N-Queens",
+    "difficulty": "Hard",
+    "category": "Backtracking",
+    "description": "The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other. Given an integer n, return all distinct solutions to the n-queens puzzle. You may return the answer in any order. Each solution contains a distinct board configuration of the n-queens' placement, where 'Q' and '.' both indicate a queen and an empty space, respectively.",
+    "optimal_solution": "The optimal solution uses a backtracking approach to recursively place the queens on the board. We use sets to keep track of the columns and diagonals that are already occupied. The time complexity is O(n!) and the space complexity is O(n^2) for the board and recursion stack."
+  },
+  {
+    "id": 39,
+    "title": "N-Queens II",
+    "difficulty": "Hard",
+    "category": "Backtracking",
+    "description": "The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other. Given an integer n, return the number of distinct solutions to the n-queens puzzle.",
+    "optimal_solution": "The optimal solution uses a backtracking approach to recursively place the queens on the board, similar to the N-Queens problem. However, instead of storing the board configurations, we simply count the number of valid solutions. The time complexity is O(n!) and the space complexity is O(n) for the recursion stack."
+  },
+  {
+    "id": 40,
+    "title": "Maximum Subarray",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Given an integer array nums, find the subarray with the largest sum, and return its sum.",
+    "optimal_solution": "The optimal solution uses Kadane's algorithm. We iterate through the array, keeping track of the current maximum sum and the overall maximum sum. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 41,
+    "title": "Spiral Matrix",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given an m x n matrix, return all elements of the matrix in spiral order.",
+    "optimal_solution": "The optimal solution uses four pointers to keep track of the boundaries of the matrix. We iterate through the matrix in a spiral path, updating the boundaries as we go. This has a time complexity of O(m * n) and a space complexity of O(1)."
+  },
+  {
+    "id": 42,
+    "title": "Jump Game",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position. Return true if you can reach the last index, or false otherwise.",
+    "optimal_solution": "The optimal solution uses a greedy approach. We keep track of the farthest reachable index. We iterate through the array, and for each position, we check if it is reachable. If it is, we update the farthest reachable index. If the farthest reachable index is greater than or equal to the last index, we return true. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 43,
+    "title": "Merge Intervals",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.",
+    "optimal_solution": "The optimal solution sorts the intervals by their start times. Then, we iterate through the sorted intervals, merging overlapping intervals as we go. This has a time complexity of O(n log n) due to the sorting step, and a space complexity of O(n) for the result."
+  },
+  {
+    "id": 44,
+    "title": "Insert Interval",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "You are given an array of non-overlapping intervals intervals where intervals[i] = [starti, endi] represent the start and the end of the ith interval and intervals is sorted in ascending order by starti. You are also given an interval newInterval = [start, end] that represents the start and end of another interval. Insert newInterval into intervals such that intervals is still sorted in ascending order by starti and intervals still does not have any overlapping intervals (merge overlapping intervals if necessary). Return intervals after the insertion.",
+    "optimal_solution": "The optimal solution iterates through the intervals, adding all intervals that end before the new interval starts to the result. Then, it merges the new interval with all overlapping intervals. Finally, it adds all remaining intervals to the result. This has a time complexity of O(n) and a space complexity of O(n)."
+  },
+  {
+    "id": 45,
+    "title": "Length of Last Word",
+    "difficulty": "Easy",
+    "category": "Strings",
+    "description": "Given a string s consisting of words and spaces, return the length of the last word in the string.",
+    "optimal_solution": "The optimal solution iterates through the string from right to left, skipping any trailing spaces. Then, it counts the characters of the last word until it encounters a space or reaches the beginning of the string. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 46,
+    "title": "Plus One",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's. Increment the large integer by one and return the resulting array of digits.",
+    "optimal_solution": "The optimal solution iterates through the digits from right to left. If a digit is less than 9, we increment it and return the digits. If a digit is 9, we set it to 0 and continue to the next digit. If we reach the beginning of the array and all digits were 9, we insert a 1 at the beginning of the array. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 47,
+    "title": "Add Binary",
+    "difficulty": "Easy",
+    "category": "Strings",
+    "description": "Given two binary strings a and b, return their sum as a binary string.",
+    "optimal_solution": "The optimal solution simulates binary addition by hand. We iterate through the strings from right to left, adding the corresponding bits and any carry-over. This has a time complexity of O(max(m, n)) and a space complexity of O(max(m, n)) for the result."
+  },
+  {
+    "id": 48,
+    "title": "Sqrt(x)",
+    "difficulty": "Easy",
+    "category": "Math",
+    "description": "Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well. You must not use any built-in exponent function or operator.",
+    "optimal_solution": "The optimal solution uses binary search to find the square root. This has a time complexity of O(log n) and a space complexity of O(1)."
+  },
+  {
+    "id": 49,
+    "title": "Climbing Stairs",
+    "difficulty": "Easy",
+    "category": "Dynamic Programming",
+    "description": "You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?",
+    "optimal_solution": "The optimal solution uses dynamic programming to solve this problem. The number of ways to reach the nth step is the sum of the number of ways to reach the (n-1)th and (n-2)th steps. This is the Fibonacci sequence. The time complexity is O(n) and the space complexity is O(1)."
+  },
+  {
+    "id": 50,
+    "title": "Simplify Path",
+    "difficulty": "Medium",
+    "category": "Strings",
+    "description": "Given a string path, which is an absolute path (starting with a slash '/') to a file or directory in a Unix-style file system, convert it to the simplified canonical path.",
+    "optimal_solution": "The optimal solution uses a stack to keep track of the directories in the path. We split the path by the slash character and process each component. If the component is '..', we pop from the stack. If the component is not '.' or empty, we push it to the stack. Finally, we join the components in the stack to form the simplified path. This has a time complexity of O(n) and a space complexity of O(n)."
+  },
+  {
+    "id": 51,
+    "title": "Set Matrix Zeroes",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given an m x n integer matrix, if an element is 0, set its entire row and column to 0's. You must do it in-place.",
+    "optimal_solution": "The optimal solution uses the first row and first column of the matrix to store whether a row or column should be zeroed out. We iterate through the matrix, and if we find a 0, we set the corresponding element in the first row and first column to 0. Then, we iterate through the matrix again, zeroing out the rows and columns based on the values in the first row and first column. This has a time complexity of O(m * n) and a space complexity of O(1)."
+  },
+  {
+    "id": 52,
+    "title": "Edit Distance",
+    "difficulty": "Hard",
+    "category": "Dynamic Programming",
+    "description": "Given two strings word1 and word2, return the minimum number of operations required to convert word1 to word2. You have the following three operations permitted on a word: Insert a character, Delete a character, Replace a character.",
+    "optimal_solution": "The optimal solution uses dynamic programming. We create a 2D array to store the minimum number of operations to convert the first i characters of word1 to the first j characters of word2. The time complexity is O(m * n) and the space complexity is O(m * n)."
+  },
+  {
+    "id": 53,
+    "title": "Search a 2D Matrix",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "You are given an m x n integer matrix with the following two properties: Each row is sorted in non-decreasing order. The first integer of each row is greater than the last integer of the previous row. Given an integer target, return true if target is in matrix or false otherwise. You must write a solution in O(log(m * n)) time complexity.",
+    "optimal_solution": "The optimal solution treats the 2D matrix as a sorted 1D array and uses binary search to find the target. This has a time complexity of O(log(m * n)) and a space complexity of O(1)."
+  },
+  {
+    "id": 54,
+    "title": "Sort Colors",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue, respectively. We will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively. You must solve this problem without using the library's sort function.",
+    "optimal_solution": "The optimal solution uses the Dutch National Flag algorithm. We use three pointers to keep track of the positions of the red, white, and blue elements. We iterate through the array, swapping elements to their correct positions. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 55,
+    "title": "Minimum Window Substring",
+    "difficulty": "Hard",
+    "category": "Strings",
+    "description": "Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string \"\".",
+    "optimal_solution": "The optimal solution uses a sliding window approach with a hash map to keep track of the characters in t. We expand the window by moving the right pointer, and when the window contains all the characters in t, we shrink the window by moving the left pointer. This has a time complexity of O(m + n) and a space complexity of O(k) where k is the number of unique characters in t."
+  },
+  {
+    "id": 56,
+    "title": "Combinations",
+    "difficulty": "Medium",
+    "category": "Backtracking",
+    "description": "Given two integers n and k, return all possible combinations of k numbers chosen from the range [1, n]. You may return the answer in any order.",
+    "optimal_solution": "The optimal solution uses a backtracking approach to recursively build the combinations. The time complexity is O(k * C(n, k)) and the space complexity is O(k) for the recursion stack."
+  },
+  {
+    "id": 57,
+    "title": "Subsets",
+    "difficulty": "Medium",
+    "category": "Backtracking",
+    "description": "Given an integer array nums of unique elements, return all possible subsets (the power set). The solution set must not contain duplicate subsets. Return the solution in any order.",
+    "optimal_solution": "The optimal solution uses a backtracking approach to recursively build the subsets. The time complexity is O(n * 2^n) and the space complexity is O(n) for the recursion stack."
+  },
+  {
+    "id": 58,
+    "title": "Word Search",
+    "difficulty": "Medium",
+    "category": "Backtracking",
+    "description": "Given an m x n grid of characters board and a string word, return true if word exists in the grid. The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.",
+    "optimal_solution": "The optimal solution uses a backtracking approach to search for the word in the grid. We iterate through each cell of the board, and if the cell matches the first letter of the word, we start a recursive search from that cell. The time complexity is O(m * n * 4^L) where L is the length of the word, and the space complexity is O(L) for the recursion stack."
+  },
+  {
+    "id": 59,
+    "title": "Remove Duplicates from Sorted List",
+    "difficulty": "Easy",
+    "category": "Linked Lists",
+    "description": "Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.",
+    "optimal_solution": "The optimal solution uses a single pointer to iterate through the list. If the current node has the same value as the next node, we skip the next node. Otherwise, we move to the next node. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 60,
+    "title": "Remove Duplicates from Sorted List II",
+    "difficulty": "Medium",
+    "category": "Linked Lists",
+    "description": "Given the head of a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list. Return the linked list sorted as well.",
+    "optimal_solution": "The optimal solution uses a dummy head node and two pointers. The first pointer iterates through the list, and the second pointer helps to identify and skip the duplicate nodes. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 61,
+    "title": "Search in Rotated Sorted Array",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "There is an integer array nums sorted in ascending order (with distinct values). Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2]. Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums. You must write an algorithm with O(log n) runtime complexity.",
+    "optimal_solution": "The optimal solution uses a modified binary search. In each step, we determine which half of the array is sorted and check if the target lies within that sorted half. This allows us to find the target in O(log n) time with O(1) space."
+  },
+  {
+    "id": 62,
+    "title": "Find First and Last Position of Element in Sorted Array",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value. If target is not found in the array, return [-1, -1]. You must write an algorithm with O(log n) runtime complexity.",
+    "optimal_solution": "The optimal solution uses two binary searches. The first search finds the leftmost occurrence of the target, and the second search finds the rightmost occurrence. This has a time complexity of O(log n) and a space complexity of O(1)."
+  },
+  {
+    "id": 63,
+    "title": "Search in Rotated Sorted Array II",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "There is an integer array nums sorted in non-decreasing order (not necessarily with distinct values). Before being passed to your function, nums is rotated at an unknown pivot index k (0 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,0,1,2,2,5,6] might be rotated at pivot index 3 and become [2,5,6,0,0,1,2]. Given the array nums after the rotation and an integer target, return true if target is in nums, or false otherwise. You must solve this problem without using the library's sort function.",
+    "optimal_solution": "The optimal solution uses a modified binary search. The presence of duplicates makes it harder to determine which half is sorted. In the worst case, where all elements are the same, the time complexity degrades to O(n). However, on average, it remains O(log n). The space complexity is O(1)."
+  },
+  {
+    "id": 64,
+    "title": "Remove Duplicates from Sorted Array II",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given an integer array nums sorted in non-decreasing order, remove some duplicates in-place such that each unique element appears at most twice. The relative order of the elements should be kept the same. Then return the number of elements in nums after removing the duplicates.",
+    "optimal_solution": "The optimal solution uses a two-pointer approach. One pointer iterates through the array, and the other points to the position where the next element should be placed. We only place an element if it is greater than the element at two positions before the current placement position. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 65,
+    "title": "Largest Rectangle in Histogram",
+    "difficulty": "Hard",
+    "category": "Arrays",
+    "description": "Given an array of integers heights representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram.",
+    "optimal_solution": "The optimal solution uses a stack to keep track of the indices of the bars. We iterate through the bars, and for each bar, we pop from the stack all bars that are taller than the current bar, calculating the area for each popped bar. This has a time complexity of O(n) and a space complexity of O(n)."
+  },
+  {
+    "id": 66,
+    "title": "Maximal Rectangle",
+    "difficulty": "Hard",
+    "category": "Arrays",
+    "description": "Given a rows x cols binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.",
+    "optimal_solution": "The optimal solution uses the largest rectangle in histogram approach. We iterate through each row of the matrix, treating each row as the base of a histogram. We calculate the height of the bars in the histogram for each row and then use the largest rectangle in histogram algorithm to find the maximum area. This has a time complexity of O(m * n) and a space complexity of O(n)."
+  },
+  {
+    "id": 67,
+    "title": "Partition List",
+    "difficulty": "Medium",
+    "category": "Linked Lists",
+    "description": "Given the head of a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x. You should preserve the original relative order of the nodes in each of the two partitions.",
+    "optimal_solution": "The optimal solution uses two pointers to create two separate lists: one for nodes less than x and one for nodes greater than or equal to x. Then, we connect the two lists. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 68,
+    "title": "Scramble String",
+    "difficulty": "Hard",
+    "category": "Strings",
+    "description": "We can scramble a string s to get a string t using the following algorithm: If the length of the string is 1, stop. If the length of the string is > 1, do the following: Split the string into two non-empty substrings at a random index, i.e., if the string is s, divide it to x and y where s = x + y. Randomly decide to swap the two substrings or to keep them in the same order. i.e., s = x + y or s = y + x. Recursively apply the same aformentioned algorithm on the two substrings x and y. Given two strings s1 and s2 of the same length, return true if s2 is a scrambled string of s1, otherwise, return false.",
+    "optimal_solution": "The optimal solution uses dynamic programming with memoization. We create a 3D array to store the results of subproblems. The time complexity is O(n^4) and the space complexity is O(n^3)."
+  },
+  {
+    "id": 69,
+    "title": "Merge Sorted Array",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively. Merge nums1 and nums2 into a single array sorted in non-decreasing order. The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.",
+    "optimal_solution": "The optimal solution uses a two-pointer approach, starting from the end of the arrays. We compare the elements at the end of nums1 and nums2 and place the larger element at the end of nums1. This has a time complexity of O(m + n) and a space complexity of O(1)."
+  },
+  {
+    "id": 70,
+    "title": "Gray Code",
+    "difficulty": "Medium",
+    "category": "Bit Manipulation",
+    "description": "An n-bit gray code sequence is a sequence of 2n integers where: Every integer is in the inclusive range [0, 2n - 1]. The first integer is 0. An integer appears no more than once in the sequence. The binary representation of every pair of adjacent integers differs by exactly one bit. Given an integer n, return any valid n-bit gray code sequence.",
+    "optimal_solution": "The optimal solution uses a mathematical formula to generate the gray code. The ith gray code is i ^ (i >> 1). This has a time complexity of O(2^n) and a space complexity of O(1)."
+  },
+  {
+    "id": 71,
+    "title": "Subsets II",
+    "difficulty": "Medium",
+    "category": "Backtracking",
+    "description": "Given an integer array nums that may contain duplicates, return all possible subsets (the power set). The solution set must not contain duplicate subsets. Return the solution in any order.",
+    "optimal_solution": "The optimal solution sorts the input array and then uses a backtracking approach to recursively build the subsets, skipping duplicates to avoid duplicate subsets in the result. The time complexity is O(n * 2^n) and the space complexity is O(n) for the recursion stack."
+  },
+  {
+    "id": 72,
+    "title": "Decode Ways",
+    "difficulty": "Medium",
+    "category": "Dynamic Programming",
+    "description": "A message containing letters from A-Z can be encoded into numbers using the following mapping: 'A' -> 1, 'B' -> 2, ..., 'Z' -> 26. To decode an encoded message, all the digits must be grouped then mapped back into letters using the reverse of the mapping above (there may be multiple ways). For example, \"11106\" can be mapped into: \"AAJF\" with the grouping (1 1 10 6), \"KJF\" with the grouping (11 10 6). Note that the grouping (1 11 06) is invalid because \"06\" cannot be mapped into 'F' since \"6\" is different from \"06\". Given a string s containing only digits, return the number of ways to decode it.",
+    "optimal_solution": "The optimal solution uses dynamic programming. We create a 1D array to store the number of ways to decode the first i characters of the string. The time complexity is O(n) and the space complexity is O(n)."
+  },
+  {
+    "id": 73,
+    "title": "Reverse Linked List II",
+    "difficulty": "Medium",
+    "category": "Linked Lists",
+    "description": "Given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right, and return the reversed list.",
+    "optimal_solution": "The optimal solution uses a dummy head node and three pointers. The first pointer iterates to the node before the left position. The second and third pointers are used to reverse the sublist from left to right. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 74,
+    "title": "Restore IP Addresses",
+    "difficulty": "Medium",
+    "category": "Strings",
+    "description": "A valid IP address consists of exactly four integers separated by single dots. Each integer is between 0 and 255 (inclusive) and cannot have leading zeros. For example, \"0.1.2.201\" and \"192.168.1.1\" are valid IP addresses, but \"0.011.255.245\", \"192.168.1.312\" and \"192.168@1.1\" are invalid IP addresses. Given a string s containing only digits, return all possible valid IP addresses that can be formed by inserting dots into s. You are not allowed to reorder or remove any digits in s. You may return the valid IP addresses in any order.",
+    "optimal_solution": "The optimal solution uses a backtracking approach to recursively build the IP addresses. The time complexity is difficult to analyze precisely but is related to the number of possible IP addresses. The space complexity is O(1)."
+  },
+  {
+    "id": 75,
+    "title": "Binary Tree Inorder Traversal",
+    "difficulty": "Easy",
+    "category": "Trees",
+    "description": "Given the root of a binary tree, return the inorder traversal of its nodes' values.",
+    "optimal_solution": "The optimal solution uses a recursive approach to perform the inorder traversal. The time complexity is O(n) and the space complexity is O(n) in the worst case for the recursion stack."
+  },
+  {
+    "id": 76,
+    "title": "Unique Binary Search Trees II",
+    "difficulty": "Medium",
+    "category": "Trees",
+    "description": "Given an integer n, return all the structurally unique BST's (binary search trees) which has exactly n nodes of unique values from 1 to n. Return the answer in any order.",
+    "optimal_solution": "The optimal solution uses a recursive approach with memoization. For each number i from 1 to n, we recursively generate all possible left subtrees from numbers less than i and all possible right subtrees from numbers greater than i. The time complexity is O(4^n / n^(3/2)) and the space complexity is O(4^n / n^(3/2))."
+  },
+  {
+    "id": 77,
+    "title": "Unique Binary Search Trees",
+    "difficulty": "Medium",
+    "category": "Dynamic Programming",
+    "description": "Given an integer n, return the number of structurally unique BST's (binary search trees) which has exactly n nodes of unique values from 1 to n.",
+    "optimal_solution": "The optimal solution uses dynamic programming. The number of unique BST's with n nodes is the nth Catalan number. The time complexity is O(n^2) and the space complexity is O(n)."
+  },
+  {
+    "id": 78,
+    "title": "Interleaving String",
+    "difficulty": "Medium",
+    "category": "Dynamic Programming",
+    "description": "Given strings s1, s2, and s3, find whether s3 is formed by an interleaving of s1 and s2. An interleaving of two strings s and t is a configuration where s and t are divided into n and m substrings respectively, such that: s = s1 + s2 + ... + sn, t = t1 + t2 + ... + tm, |n - m| <= 1, the interleaving is s1 + t1 + s2 + t2 + s3 + t3 + ... or t1 + s1 + t2 + s2 + t3 + s3 + ... Note: a + b is the concatenation of strings a and b.",
+    "optimal_solution": "The optimal solution uses dynamic programming. We create a 2D array to store whether the first i characters of s1 and the first j characters of s2 can form the first i + j characters of s3. The time complexity is O(m * n) and the space complexity is O(m * n)."
+  },
+  {
+    "id": 79,
+    "title": "Validate Binary Search Tree",
+    "difficulty": "Medium",
+    "category": "Trees",
+    "description": "Given the root of a binary tree, determine if it is a valid binary search tree (BST). A valid BST is defined as follows: The left subtree of a node contains only nodes with keys less than the node's key. The right subtree of a node contains only nodes with keys greater than the node's key. Both the left and right subtrees must also be binary search trees.",
+    "optimal_solution": "The optimal solution uses a recursive approach with a range check. We recursively check if each node's value is within the valid range. The time complexity is O(n) and the space complexity is O(n) in the worst case for the recursion stack."
+  },
+  {
+    "id": 80,
+    "title": "Recover Binary Search Tree",
+    "difficulty": "Medium",
+    "category": "Trees",
+    "description": "You are given the root of a binary search tree (BST), where the values of exactly two nodes of the tree were swapped by mistake. Recover the tree without changing its structure. You must solve the problem in O(n) time complexity and O(1) space complexity.",
+    "optimal_solution": "The optimal solution uses an in-order traversal with two pointers. We keep track of the previously visited node and find the two nodes that are out of order. Then, we swap their values. This has a time complexity of O(n) and a space complexity of O(1) (Morris traversal)."
+  },
+  {
+    "id": 81,
+    "title": "Same Tree",
+    "difficulty": "Easy",
+    "category": "Trees",
+    "description": "Given the roots of two binary trees p and q, write a function to check if they are the same or not. Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.",
+    "optimal_solution": "The optimal solution uses a recursive approach to compare the two trees. The time complexity is O(min(m, n)) where m and n are the number of nodes in the two trees, and the space complexity is O(min(m, n)) for the recursion stack."
+  },
+  {
+    "id": 82,
+    "title": "Symmetric Tree",
+    "difficulty": "Easy",
+    "category": "Trees",
+    "description": "Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).",
+    "optimal_solution": "The optimal solution uses a recursive approach to compare the left and right subtrees. The time complexity is O(n) and the space complexity is O(n) for the recursion stack."
+  },
+  {
+    "id": 83,
+    "title": "Binary Tree Level Order Traversal",
+    "difficulty": "Medium",
+    "category": "Trees",
+    "description": "Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).",
+    "optimal_solution": "The optimal solution uses a breadth-first search (BFS) approach with a queue. We add the root to the queue and then repeatedly extract nodes from the queue, adding their children to the queue. This has a time complexity of O(n) and a space complexity of O(n)."
+  },
+  {
+    "id": 84,
+    "title": "Binary Tree Zigzag Level Order Traversal",
+    "difficulty": "Medium",
+    "category": "Trees",
+    "description": "Given the root of a binary tree, return the zigzag level order traversal of its nodes' values. (i.e., from left to right, then right to left for the next level and so on. Repeat the zigzag pattern level by level).",
+    "optimal_solution": "The optimal solution uses a breadth-first search (BFS) approach with a deque. We alternate between adding nodes to the front and back of the deque to achieve the zigzag order. This has a time complexity of O(n) and a space complexity of O(n)."
+  },
+  {
+    "id": 85,
+    "title": "Maximum Depth of Binary Tree",
+    "difficulty": "Easy",
+    "category": "Trees",
+    "description": "Given the root of a binary tree, return its maximum depth. A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.",
+    "optimal_solution": "The optimal solution uses a recursive approach to find the maximum depth. The time complexity is O(n) and the space complexity is O(n) for the recursion stack."
+  },
+  {
+    "id": 86,
+    "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+    "difficulty": "Medium",
+    "category": "Trees",
+    "description": "Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree.",
+    "optimal_solution": "The optimal solution uses a recursive approach. We find the root of the tree from the preorder traversal, and then use its position in the inorder traversal to split the inorder and preorder arrays into left and right subtrees. This has a time complexity of O(n) and a space complexity of O(n)."
+  },
+  {
+    "id": 87,
+    "title": "Construct Binary Tree from Inorder and Postorder Traversal",
+    "difficulty": "Medium",
+    "category": "Trees",
+    "description": "Given two integer arrays inorder and postorder where inorder is the inorder traversal of a binary tree and postorder is the postorder traversal of the same tree, construct and return the binary tree.",
+    "optimal_solution": "The optimal solution uses a recursive approach. We find the root of the tree from the postorder traversal, and then use its position in the inorder traversal to split the inorder and postorder arrays into left and right subtrees. This has a time complexity of O(n) and a space complexity of O(n)."
+  },
+  {
+    "id": 88,
+    "title": "Binary Tree Level Order Traversal II",
+    "difficulty": "Medium",
+    "category": "Trees",
+    "description": "Given the root of a binary tree, return the bottom-up level order traversal of its nodes' values. (i.e., from left to right, level by level from leaf to root).",
+    "optimal_solution": "The optimal solution uses a breadth-first search (BFS) approach with a queue. We perform a level order traversal and then reverse the result. This has a time complexity of O(n) and a space complexity of O(n)."
+  },
+  {
+    "id": 89,
+    "title": "Convert Sorted Array to Binary Search Tree",
+    "difficulty": "Easy",
+    "category": "Trees",
+    "description": "Given an integer array nums where the elements are sorted in ascending order, convert it to a height-balanced binary search tree.",
+    "optimal_solution": "The optimal solution uses a recursive approach. We find the middle element of the array and make it the root of the tree. Then, we recursively build the left and right subtrees from the left and right halves of the array. This has a time complexity of O(n) and a space complexity of O(log n) for the recursion stack."
+  },
+  {
+    "id": 90,
+    "title": "Convert Sorted List to Binary Search Tree",
+    "difficulty": "Medium",
+    "category": "Trees",
+    "description": "Given the head of a singly linked list where elements are sorted in ascending order, convert it to a height-balanced binary search tree.",
+    "optimal_solution": "The optimal solution uses a recursive approach. We find the middle element of the linked list and make it the root of the tree. Then, we recursively build the left and right subtrees from the left and right halves of the linked list. This has a time complexity of O(n log n) and a space complexity of O(log n) for the recursion stack."
+  },
+  {
+    "id": 91,
+    "title": "Balanced Binary Tree",
+    "difficulty": "Easy",
+    "category": "Trees",
+    "description": "Given a binary tree, determine if it is height-balanced. For this problem, a height-balanced binary tree is defined as: a binary tree in which the left and right subtrees of every node differ in height by no more than 1.",
+    "optimal_solution": "The optimal solution uses a recursive approach. For each node, we recursively calculate the height of its left and right subtrees. If the absolute difference between the heights is greater than 1, the tree is not balanced. This has a time complexity of O(n) and a space complexity of O(n) for the recursion stack."
+  },
+  {
+    "id": 92,
+    "title": "Minimum Depth of Binary Tree",
+    "difficulty": "Easy",
+    "category": "Trees",
+    "description": "Given a binary tree, find its minimum depth. The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.",
+    "optimal_solution": "The optimal solution uses a breadth-first search (BFS) approach. We iterate through the tree level by level, and the first leaf node we encounter determines the minimum depth. This has a time complexity of O(n) and a space complexity of O(n)."
+  },
+  {
+    "id": 93,
+    "title": "Path Sum",
+    "difficulty": "Easy",
+    "category": "Trees",
+    "description": "Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals targetSum. A leaf node is a node with no children.",
+    "optimal_solution": "The optimal solution uses a recursive approach. We subtract the current node's value from the target sum and recursively call the function on the left and right children. If we reach a leaf node and the target sum is 0, we return true. This has a time complexity of O(n) and a space complexity of O(n) for the recursion stack."
+  },
+  {
+    "id": 94,
+    "title": "Path Sum II",
+    "difficulty": "Medium",
+    "category": "Trees",
+    "description": "Given the root of a binary tree and an integer targetSum, return all root-to-leaf paths where the sum of the node values in the path equals targetSum. Each path should be returned as a list of the node values, not node references. A leaf node is a node with no children.",
+    "optimal_solution": "The optimal solution uses a recursive approach. We subtract the current node's value from the target sum and recursively call the function on the left and right children. If we reach a leaf node and the target sum is 0, we add the current path to the result. This has a time complexity of O(n) and a space complexity of O(n) for the recursion stack."
+  },
+  {
+    "id": 95,
+    "title": "Flatten Binary Tree to Linked List",
+    "difficulty": "Medium",
+    "category": "Trees",
+    "description": "Given the root of a binary tree, flatten it into a \"linked list\" in-place. The \"linked list\" should look like a pre-order traversal, with the right child always pointing to the next node in the list and the left child always null. The \"linked list\" should be in the same order as a pre-order traversal of the binary tree.",
+    "optimal_solution": "The optimal solution uses a recursive approach. We flatten the right subtree, then flatten the left subtree, and then connect the right child of the root to the flattened left subtree, and the right child of the flattened left subtree to the flattened right subtree. This has a time complexity of O(n) and a space complexity of O(n) for the recursion stack."
+  },
+  {
+    "id": 96,
+    "title": "Populating Next Right Pointers in Each Node",
+    "difficulty": "Medium",
+    "category": "Trees",
+    "description": "You are given a perfect binary tree where all leaves are on the same level, and every parent has two children. Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL. Initially, all next pointers are set to NULL.",
+    "optimal_solution": "The optimal solution uses a level order traversal (BFS) approach. We iterate through the tree level by level, and for each node, we set its next pointer to the next node in the same level. This has a time complexity of O(n) and a space complexity of O(n)."
+  },
+  {
+    "id": 97,
+    "title": "Populating Next Right Pointers in Each Node II",
+    "difficulty": "Medium",
+    "category": "Trees",
+    "description": "Given a binary tree, populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL. You may only use constant extra space.",
+    "optimal_solution": "The optimal solution uses a modified level order traversal (BFS) approach. We iterate through the tree level by level, and for each node, we set its next pointer to the next node in the same level. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 98,
+    "title": "Sum Root to Leaf Numbers",
+    "difficulty": "Medium",
+    "category": "Trees",
+    "description": "You are given the root of a binary tree containing digits from 0 to 9 only. Each root-to-leaf path in the tree represents a number. For example, the root-to-leaf path 1->2->3 represents the number 123. Return the total sum of all root-to-leaf numbers. Test cases are generated so that the answer will fit in a 32-bit integer. A leaf node is a node with no children.",
+    "optimal_solution": "The optimal solution uses a recursive approach. We pass the current number down to the children, and when we reach a leaf node, we add the current number to the total sum. This has a time complexity of O(n) and a space complexity of O(n) for the recursion stack."
+  },
+  {
+    "id": 99,
+    "title": "Longest Consecutive Sequence",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence. You must write an algorithm that runs in O(n) time.",
+    "optimal_solution": "The optimal solution uses a hash set to store the numbers. We iterate through the numbers, and for each number, we check if it is the start of a sequence (i.e., if number - 1 is not in the set). If it is, we count the length of the sequence. This has a time complexity of O(n) and a space complexity of O(n)."
+  },
+  {
+    "id": 100,
+    "title": "Word Ladder",
+    "difficulty": "Hard",
+    "category": "Graphs",
+    "description": "A transformation sequence from word beginWord to word endWord using a dictionary wordList is a sequence of words beginWord -> s1 -> s2 -> ... -> sk such that: Every adjacent pair of words differs by a single letter. Every si for 1 <= i <= k is in wordList. Note that beginWord does not need to be in wordList. endWord is in wordList. Given two words, beginWord and endWord, and a dictionary wordList, return the number of words in the shortest transformation sequence from beginWord to endWord, or 0 if no such sequence exists.",
+    "optimal_solution": "The optimal solution uses a breadth-first search (BFS) approach. We create a graph where each word is a node, and an edge exists between two words if they differ by a single letter. Then, we perform a BFS to find the shortest path from beginWord to endWord. This has a time complexity of O(V + E) where V is the number of words and E is the number of edges, and a space complexity of O(V + E)."
+  },
+  {
+    "id": 101,
+    "title": "Longest Palindromic Substring",
+    "difficulty": "Medium",
+    "category": "Strings",
+    "description": "Given a string s, return the longest palindromic substring in s.",
+    "optimal_solution": "The optimal solution uses dynamic programming. We create a 2D boolean array to store whether a substring is a palindrome. The time complexity is O(n^2) and the space complexity is O(n^2)."
+  },
+  {
+    "id": 102,
+    "title": "Longest Common Prefix",
+    "difficulty": "Easy",
+    "category": "Strings",
+    "description": "Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string \"\".",
+    "optimal_solution": "The optimal solution sorts the array of strings and then compares the first and last strings in the sorted array. The longest common prefix will be the common prefix of these two strings. This has a time complexity of O(n log n) due to sorting and a space complexity of O(1)."
+  },
+  {
+    "id": 103,
+    "title": "String to Integer (atoi)",
+    "difficulty": "Medium",
+    "category": "Strings",
+    "description": "Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer (similar to C/C++'s atoi function). The algorithm for myAtoi(string s) is as follows: Read in and ignore any leading whitespace. Check if the next character (if not already at the end of the string) is '-' or '+'. Read this character in if it is either. This might be the first non-whitespace character. Read in next the characters until the first non-digit character or the end of the input is reached. The rest of the string is ignored. Convert these digits into an integer (i.e. \"123\" -> 123, \"0032\" -> 32). If no digits were read, then the integer is 0. Change the sign as necessary (from step 2). If the integer is out of the 32-bit signed integer range [-231, 231 - 1], then clamp the number so that it remains in the range. Specifically, integers less than -231 should be clamped to -231, and integers greater than 231 - 1 should be clamped to 231 - 1. Return the integer as the final result.",
+    "optimal_solution": "The optimal solution iterates through the string, handling whitespace, sign, and digits. It checks for overflow at each step to ensure the result stays within the 32-bit signed integer range. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 104,
+    "title": "Regular Expression Matching",
+    "difficulty": "Hard",
+    "category": "Strings",
+    "description": "Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*'. '.' Matches any single character. '*' Matches zero or more of the preceding element. The matching should cover the entire input string (not partial).",
+    "optimal_solution": "The optimal solution uses dynamic programming. We create a 2D boolean array to store whether the first i characters of the string match the first j characters of the pattern. The time complexity is O(m * n) and the space complexity is O(m * n)."
+  },
+  {
+    "id": 105,
+    "title": "Container With Most Water",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]). Find two lines that together with the x-axis form a container, such that the container contains the most water. Return the maximum amount of water a container can store.",
+    "optimal_solution": "The optimal solution uses a two-pointer approach. We start with two pointers at the ends of the array and move the pointer pointing to the shorter line inward. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 106,
+    "title": "Integer to Roman",
+    "difficulty": "Medium",
+    "category": "Math",
+    "description": "Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. Given an integer, convert it to a roman numeral.",
+    "optimal_solution": "The optimal solution uses a greedy approach with a pre-defined list of Roman numeral symbols and their corresponding values. The time complexity is O(1) because the input is limited to a certain range, and the space complexity is O(1)."
+  },
+  {
+    "id": 107,
+    "title": "Roman to Integer",
+    "difficulty": "Easy",
+    "category": "Math",
+    "description": "Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. Given a roman numeral, convert it to an integer.",
+    "optimal_solution": "The optimal solution iterates through the Roman numeral string from left to right. If the current symbol's value is less than the next symbol's value, we subtract the current symbol's value. Otherwise, we add it. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 108,
+    "title": "Longest Common Prefix",
+    "difficulty": "Easy",
+    "category": "Strings",
+    "description": "Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string \"\".",
+    "optimal_solution": "The optimal solution sorts the array of strings and then compares the first and last strings in the sorted array. The longest common prefix will be the common prefix of these two strings. This has a time complexity of O(n log n) due to sorting and a space complexity of O(1)."
+  },
+  {
+    "id": 109,
+    "title": "3Sum",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0. Notice that the solution set must not contain duplicate triplets.",
+    "optimal_solution": "The optimal solution sorts the array and then uses a two-pointer approach for each element to find the other two elements that sum to zero. This has a time complexity of O(n^2) and a space complexity of O(1) or O(n) depending on the sorting algorithm used."
+  },
+  {
+    "id": 110,
+    "title": "3Sum Closest",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given an integer array nums of length n and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.",
+    "optimal_solution": "The optimal solution sorts the array and then uses a two-pointer approach for each element to find the other two elements that have a sum closest to the target. This has a time complexity of O(n^2) and a space complexity of O(1) or O(n) depending on the sorting algorithm used."
+  },
+  {
+    "id": 111,
+    "title": "4Sum",
+    "difficulty": "Medium",
+    "category": "Arrays",
+    "description": "Given an array nums of n integers, return an array of all the unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that: 0 <= a, b, c, d < n; a, b, c, and d are distinct; and nums[a] + nums[b] + nums[c] + nums[d] == target. You may return the answer in any order.",
+    "optimal_solution": "The optimal solution sorts the array and then uses a nested loop with a two-pointer approach to find the quadruplets. This has a time complexity of O(n^3) and a space complexity of O(1) or O(n) depending on the sorting algorithm used."
+  },
+  {
+    "id": 112,
+    "title": "Remove Nth Node From End of List",
+    "difficulty": "Medium",
+    "category": "Linked Lists",
+    "description": "Given the head of a linked list, remove the nth node from the end of the list and return its head.",
+    "optimal_solution": "The optimal solution uses a two-pointer approach. The first pointer is advanced n nodes ahead of the second pointer. Then, both pointers are moved together until the first pointer reaches the end of the list. The second pointer will then be at the node before the one to be removed. This has a time complexity of O(L) where L is the length of the list, and a space complexity of O(1)."
+  },
+  {
+    "id": 113,
+    "title": "Valid Parentheses",
+    "difficulty": "Easy",
+    "category": "Strings",
+    "description": "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if: Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order. Every close bracket has a corresponding open bracket of the same type.",
+    "optimal_solution": "The optimal solution uses a stack to keep track of the open brackets. When a closing bracket is encountered, we check if it matches the top of the stack. This has a time complexity of O(n) and a space complexity of O(n) in the worst case."
+  },
+  {
+    "id": 114,
+    "title": "Merge Two Sorted Lists",
+    "difficulty": "Easy",
+    "category": "Linked Lists",
+    "description": "You are given the heads of two sorted linked lists list1 and list2. Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists. Return the head of the merged linked list.",
+    "optimal_solution": "The optimal solution uses a dummy head node and a pointer to build the new sorted list. It iterates through both lists, always appending the smaller of the two nodes to the new list. This has a time complexity of O(m + n) and a space complexity of O(1)."
+  },
+  {
+    "id": 115,
+    "title": "Generate Parentheses",
+    "difficulty": "Medium",
+    "category": "Strings",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.",
+    "optimal_solution": "The optimal solution uses a backtracking approach to recursively build the parentheses combinations. The time complexity is O(4^n / sqrt(n)) and the space complexity is O(n) for the recursion stack."
+  },
+  {
+    "id": 116,
+    "title": "Merge k Sorted Lists",
+    "difficulty": "Hard",
+    "category": "Linked Lists",
+    "description": "You are given an array of k linked-lists lists, each linked-list is sorted in ascending order. Merge all the linked-lists into one sorted linked-list and return it.",
+    "optimal_solution": "The optimal solution uses a min-heap to store the heads of the k lists. We repeatedly extract the minimum element from the heap and add it to our result list. This has a time complexity of O(N log k) where N is the total number of nodes and k is the number of lists, and a space complexity of O(k) for the heap."
+  },
+  {
+    "id": 117,
+    "title": "Swap Nodes in Pairs",
+    "difficulty": "Medium",
+    "category": "Linked Lists",
+    "description": "Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)",
+    "optimal_solution": "The optimal solution uses a dummy head node and a pointer to iterate through the list, swapping pairs of nodes as it goes. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 118,
+    "title": "Reverse Nodes in k-Group",
+    "difficulty": "Hard",
+    "category": "Linked Lists",
+    "description": "Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list. k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is. You may not alter the values in the list's nodes, only nodes themselves may be changed.",
+    "optimal_solution": "The optimal solution uses a recursive approach. We reverse the first k nodes, and then recursively call the function on the rest of the list. This has a time complexity of O(n) and a space complexity of O(k) for the recursion stack."
+  },
+  {
+    "id": 119,
+    "title": "Remove Duplicates from Sorted Array",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.",
+    "optimal_solution": "The optimal solution uses a two-pointer approach. One pointer iterates through the array, and the other points to the position of the next unique element. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 120,
+    "title": "Remove Element",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.",
+    "optimal_solution": "The optimal solution uses a two-pointer approach. One pointer iterates through the array, and the other points to the position where the next non-val element should be placed. This has a time complexity of O(n) and a space complexity of O(1)."
+  },
+  {
+    "id": 121,
+    "title": "Best Time to Buy and Sell Stock",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "You are given an array `prices` where `prices[i]` is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a single day in the future to sell that stock.  Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.",
+    "optimal_solution": "Use Kadane's Algorithm (or a similar single-pass approach).  Iterate through the `prices` array, keeping track of the minimum price seen so far (`min_price`) and the maximum profit (`max_profit`).  For each price, calculate the potential profit (current price - `min_price`). If this profit is greater than `max_profit`, update `max_profit`.  If the current price is less than `min_price`, update `min_price`.  This avoids the need for nested loops, resulting in O(n) time complexity."
+  },
+  {
+    "id": 122,
+    "title": "Contains Duplicate",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Given an integer array `nums`, return `true` if any value appears at least twice in the array, and return `false` if every element is distinct.",
+    "optimal_solution": "Use a HashSet. Iterate through the array. For each number, check if it's already in the HashSet. If it is, return `true` (duplicate found). If it's not, add it to the HashSet and continue. If the loop completes without finding a duplicate, return `false`.  This approach has a time complexity of O(n) and space complexity of O(n) in the worst case, which is optimal for this problem."
+  },
+  {
+    "id": 123,
+    "title": "Reverse String",
+    "difficulty": "Easy",
+    "category": "Strings",
+    "description": "The \"Reverse String\" coding challenge involves taking a string as input and returning a new string with the characters in reversed order.  For example, the input \"hello\" should produce the output \"olleh\".  The challenge can be solved in various ways, using different programming paradigms and data structures.  Efficiency and readability are key considerations.",
+    "optimal_solution": "The optimal solution uses in-place reversal using two pointers. One pointer starts at the beginning of the string and the other at the end.  These pointers swap characters until they meet in the middle.  This approach avoids creating a new string and has a time complexity of O(n/2) which is effectively O(n), where n is the length of the string, and a space complexity of O(1) because it operates directly on the input string.  Many languages offer built-in functions that achieve this efficiently.  For languages lacking such functions, this two-pointer approach is the most efficient and space-saving method."
+  },
+  {
+    "id": 124,
+    "title": "First Unique Character in a String",
+    "difficulty": "Easy",
+    "category": "Strings",
+    "description": "Given a string, find the index of the first non-repeating character in the string. If all characters are repeating, return -1.  For example, in \"leetcode\", the first non-repeating character is 'l' at index 3.  In \"loveleetcode\", it's 'v' at index 2. In \"aabbcc\", it's -1.",
+    "optimal_solution": "Use a dictionary (or hash map) to store character counts. Iterate through the string once to populate the character counts. Then, iterate through the string again, checking the count of each character in the dictionary. Return the index of the first character with a count of 1.  This approach has a time complexity of O(n) because we iterate through the string twice, and a space complexity of O(1) because the dictionary will hold at most 26 (or 52, depending on case sensitivity) unique characters for English alphabet strings. If case sensitivity is not required, convert the string to lowercase."
+  },
+  {
+    "id": 125,
+    "title": "Linked List Cycle",
+    "difficulty": "Easy",
+    "category": "Linked Lists",
+    "description": "Given head, the head of a linked list, determine if the linked list has a cycle in it. A cycle in a linked list is a situation where a node's next pointer points to a previously visited node, creating a closed loop.  You must solve the problem without using extra space.",
+    "optimal_solution": "Use Floyd's Tortoise and Hare algorithm.  This algorithm employs two pointers, one moving one step at a time (the tortoise) and the other moving two steps at a time (the hare). If there's a cycle, the hare will eventually overtake the tortoise.  If there's no cycle, the hare will reach the end of the list.  This approach requires only two pointers (constant extra space) and efficiently detects cycles."
+  },
+  {
+    "id": 126,
+    "title": "Subtree of Another Tree",
+    "difficulty": "Easy",
+    "category": "Trees",
+    "description": "Given two binary trees, `root1` and `root2`, determine if `root2` is a subtree of `root1`.  A subtree is a tree that is contained within another tree, where the root of the subtree is a node in the larger tree, and all of its descendants are also present in the larger tree.",
+    "optimal_solution": "The optimal solution involves a recursive depth-first search (DFS) approach combined with string serialization.  First, recursively serialize `root2` into a string representation (e.g., using preorder traversal with null markers). Then, recursively serialize `root1` while checking at each node if the serialized string of `root2` is a substring of the serialized string representing the subtree rooted at that node in `root1`.  This avoids the need for computationally expensive tree comparisons at each node in `root1`.  The serialization ensures that only structural equivalence is checked, ignoring data values if needed.  If the serialized string of `root2` is found as a substring in any subtree serialization of `root1`, return `true`; otherwise, return `false`.  This approach offers a time complexity that is linear in the size of the trees, O(m + n), where 'm' and 'n' are the number of nodes in `root1` and `root2`, respectively."
+  },
+  {
+    "id": 127,
+    "title": "Binary Search",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Given a sorted array of integers and a target integer, determine if the target integer exists in the array.  You must use a binary search algorithm to efficiently find the target.  Return `True` if the target is found, `False` otherwise.",
+    "optimal_solution": "The optimal solution uses an iterative binary search approach.  It maintains a `left` and `right` pointer, initially pointing to the beginning and end of the array respectively.  In each iteration, it calculates the middle index `mid`. If the element at `mid` is equal to the target, the target is found and `True` is returned. If the element at `mid` is less than the target, the search continues in the right half of the array (updating `left` to `mid + 1`). Otherwise, the search continues in the left half (updating `right` to `mid - 1`).  The algorithm continues until `left` becomes greater than `right`, indicating the target is not present, at which point `False` is returned. This iterative approach avoids the overhead of recursive function calls, making it slightly more efficient than a recursive solution."
+  },
+  {
+    "id": 128,
+    "title": "Majority Element",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Given an array of integers `nums`, find the majority element, which is the element that appears more than `\u230an / 2\u230b` times (where n is the length of the array).  You may assume that the majority element always exists in the array.",
+    "optimal_solution": "Use Moore's Voting Algorithm. This algorithm iterates through the array, keeping track of a candidate element and its count.  If a different element is encountered, the count is decremented. If the count reaches zero, the current element becomes the new candidate.  After iterating through the entire array, the candidate element is guaranteed to be the majority element. This algorithm has a time complexity of O(n) and a space complexity of O(1), making it the most efficient solution."
+  },
+  {
+    "id": 129,
+    "title": "Move Zeroes",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Given an integer array `nums`, move all 0's to the end of it while maintaining the relative order of the non-zero elements.  You must do this in-place without making a copy of the array.",
+    "optimal_solution": "Use two pointers, one (say `left`) to track the index where the next non-zero element should be placed, and another (say `right`) to iterate through the array.  If `nums[right]` is non-zero, swap it with `nums[left]` and increment `left`. This efficiently places all non-zero elements at the beginning, leaving zeros at the end. The time complexity is O(n) and space complexity is O(1)."
+  },
+  {
+    "id": 130,
+    "title": "Missing Number",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Given an array of integers nums containing numbers from 0 to n, where n is the length of the array, find the only number in the range that is missing from the array.",
+    "optimal_solution": "Use the mathematical formula for the sum of an arithmetic series. The sum of integers from 0 to n is n(n+1)/2. Calculate the expected sum and subtract the actual sum of the numbers in the array. The difference is the missing number. This approach has a time complexity of O(n) and a space complexity of O(1), making it the most efficient solution."
+  },
+  {
+    "id": 131,
+    "title": "Intersection of Two Arrays",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Given two integer arrays `nums1` and `nums2`, return an array of their intersection. Each element in the result must be unique and you may return the result in any order.",
+    "optimal_solution": "Use a `HashSet` (or `set` in Python) to efficiently find the intersection.  First, add all elements of `nums1` to the HashSet. Then, iterate through `nums2`. For each element in `nums2`, check if it's present in the HashSet. If it is, add it to a result list (making sure to only add it once if it's already present) and remove it from the HashSet (to guarantee uniqueness). Finally, return the result list. This approach has a time complexity of O(m + n), where m and n are the lengths of the two input arrays, because of the single pass through each array. The space complexity is O(min(m, n)) in the worst case, as the HashSet will store at most the smaller of the two arrays."
+  },
+  {
+    "id": 132,
+    "title": "Ransom Note",
+    "difficulty": "Easy",
+    "category": "Strings",
+    "description": "Given a ransom note string and a magazine string, determine if it's possible to construct the ransom note using only the characters from the magazine.  Each character in the magazine can only be used once.  Both strings consist of lowercase English letters.",
+    "optimal_solution": "Use a hash map (dictionary in Python) to count the frequency of characters in the magazine. Then, iterate through the ransom note, checking if each character exists in the hash map and if its count is greater than zero. If any character is missing or its count is insufficient, return false; otherwise, return true.  This approach has a time complexity of O(m + n), where m is the length of the magazine and n is the length of the ransom note, and a space complexity of O(1) because the hash map will contain at most 26 entries (for the 26 letters of the alphabet)."
+  },
+  {
+    "id": 133,
+    "title": "Fizz Buzz",
+    "difficulty": "Easy",
+    "category": "Strings",
+    "description": "The Fizz Buzz challenge is a classic programming problem.  The goal is to print the numbers from 1 to n, but with the following conditions:\n\n* If the number is divisible by 3, print \"Fizz\" instead of the number.\n* If the number is divisible by 5, print \"Buzz\" instead of the number.\n* If the number is divisible by both 3 and 5 (i.e., divisible by 15), print \"FizzBuzz\" instead of the number.",
+    "optimal_solution": "The most efficient solution uses a single loop and conditional statements to check divisibility by 3 and 5.  Avoid nested loops or excessive conditional branching.  A concise and readable solution can be achieved using the modulo operator (%) and string concatenation.  The optimal approach focuses on minimizing operations within the loop for best performance."
+  },
+  {
+    "id": 134,
+    "title": "Single Number",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Given a non-empty array of integers, every element appears twice except for one. Find that single non-duplicate element.",
+    "optimal_solution": "Use the bitwise XOR operator (^) .  The XOR operation has the property that `x ^ x == 0` and `x ^ 0 == x`.  Therefore, XORing all numbers in the array will cancel out pairs, leaving only the single non-duplicate number. This approach has a time complexity of O(n) and space complexity of O(1)."
+  },
+  {
+    "id": 135,
+    "title": "Palindrome Linked List",
+    "difficulty": "Easy",
+    "category": "Linked Lists",
+    "description": "Given the head of a singly linked list, determine if it is a palindrome.  A palindrome is a sequence that reads the same backwards as forwards.  For example, `1->2->2->1` is a palindrome, but `1->2->3->1` is not.",
+    "optimal_solution": "The optimal solution uses a two-pass approach combining fast and slow pointers to find the middle of the linked list, then reverses the second half and compares it with the first half.\n\n1. **Find the middle:** Use two pointers, `slow` and `fast`. `slow` moves one node at a time, while `fast` moves two nodes at a time. When `fast` reaches the end, `slow` will be at the middle.\n\n2. **Reverse the second half:** Reverse the linked list starting from `slow`.\n\n3. **Compare:** Compare the first half and the reversed second half node by node. If they are identical, the linked list is a palindrome.\n\n\nThis approach has a time complexity of O(n) because we traverse the list twice (once to find the middle and once to reverse the second half), and a space complexity of O(1) because we only use a constant amount of extra space.  We avoid the space complexity of O(n) associated with copying the list into an array or using recursion."
+  },
+  {
+    "id": 136,
+    "title": "Diameter of Binary Tree",
+    "difficulty": "Easy",
+    "category": "Trees",
+    "description": "Given a binary tree, find the length of the longest path between any two nodes in the tree. This is known as the diameter of the tree. The diameter doesn't necessarily pass through the root.",
+    "optimal_solution": "The optimal solution uses a depth-first search (DFS) approach.  Instead of directly calculating the diameter, the algorithm calculates the height of each subtree and simultaneously keeps track of the maximum diameter found so far.  For each node, the diameter passing through it is the sum of the heights of its left and right subtrees. The algorithm recursively computes the height of each subtree and updates the maximum diameter encountered. This avoids redundant calculations by only traversing the tree once.  The function returns both the height and the maximum diameter."
+  },
+  {
+    "id": 137,
+    "title": "Invert Binary Tree",
+    "difficulty": "Easy",
+    "category": "Trees",
+    "description": "Given the root of a binary tree, invert the tree, and return its root.  Inverting a binary tree involves swapping the left and right children of every node in the tree.",
+    "optimal_solution": "The optimal solution utilizes a recursive approach.  The function recursively calls itself on the left and right subtrees, swapping them before the recursive calls return.  This is efficient because it avoids the need for explicit stack management or iterative traversal, leveraging the inherent recursive structure of the tree.  The base case is when the node is null.\n\n```python\nclass TreeNode:\n    def __init__(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef invertTree(root):\n    if not root:\n        return None\n    root.left, root.right = invertTree(root.right), invertTree(root.left)\n    return root\n```"
+  },
+  {
+    "id": 138,
+    "title": "Valid Anagram",
+    "difficulty": "Easy",
+    "category": "Strings",
+    "description": "Given two strings `s` and `t`, determine if they are anagrams of each other. An anagram is a word or phrase formed by rearranging the letters of another word or phrase, typically using all the original letters exactly once.",
+    "optimal_solution": "The optimal solution uses a character count approach.  Create a dictionary (or hash map) to store the frequency of each character in string `s`. Then, iterate through string `t`, decrementing the count of each character in the dictionary. If at any point a character's count becomes negative, or if after iterating through `t` the dictionary contains any non-zero values, the strings are not anagrams. This approach has a time complexity of O(m+n) where m and n are the lengths of the strings, and space complexity of O(1) because the dictionary size is limited to the number of unique characters in the alphabet (26 in English)."
+  },
+  {
+    "id": 139,
+    "title": "Two Sum II - Input Array Is Sorted",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Given a sorted integer array `numbers` and an integer `target`, find the indices of the two numbers such that they add up to `target`.  Return the indices as a 0-based, 1-indexed array of length 2.  You may assume that each input would have exactly one solution and you may not use the same element twice.  Note that the input array is already sorted.",
+    "optimal_solution": "Utilize the Two-Pointer technique. Initialize two pointers, one at the beginning (`left`) and one at the end (`right`) of the sorted array.  Sum the values at these pointers. If the sum is less than the target, increment the `left` pointer; if the sum is greater than the target, decrement the `right` pointer.  If the sum equals the target, return the indices (1-indexed) of the two numbers. This approach achieves O(n) time complexity due to a single pass through the sorted array and O(1) space complexity because it uses only a few constant extra variables."
+  },
+  {
+    "id": 140,
+    "title": "Best Time to Buy and Sell Stock II",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "You are given an array `prices` where `prices[i]` is the price of a given stock on the i<sup>th</sup> day.  Find the maximum profit you can achieve from multiple transactions (buying and selling the stock multiple times).  You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times). Note that you must sell before you buy again.",
+    "optimal_solution": "The optimal solution uses a greedy approach. Iterate through the `prices` array, and for each day, if the price is higher than the previous day's price, add the difference (profit) to the total profit. This is because you can always buy on a low day and sell on a high day, maximizing your profit.  This avoids the need for complex dynamic programming or other algorithms.  The total accumulated profit will be the maximum profit achievable."
+  },
+  {
+    "id": 141,
+    "title": "Merge Sorted Array",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "You are given two integer arrays `nums1` and `nums2`, sorted in ascending order, and an integer `m` representing the number of elements in `nums1` before merging, and an integer `n` representing the number of elements in `nums2`.  Merge `nums2` into `nums1` such that `nums1` becomes a single, sorted array. The merged array should be sorted in ascending order.  The number of elements initialized in `nums1` is `m + n`.  You must solve this problem in-place and you may not use any additional arrays.",
+    "optimal_solution": "Use a three-pointer approach. Initialize three pointers: `p1` pointing to the end of `nums1` (index `m + n - 1`), `p2` pointing to the end of `nums2` (index `n - 1`), and `p` pointing to the end of the merged array (initially `m + n - 1`). Compare the elements at `nums1[p1]` and `nums2[p2]`. Place the larger element at `nums1[p]` and decrement the corresponding pointer. Continue this process until one of the pointers `p1` or `p2` reaches its beginning.  If any elements remain in `nums2`, copy them to the beginning of `nums1`. This approach avoids extra space and efficiently merges the arrays in-place."
+  },
+  {
+    "id": 142,
+    "title": "Pascal's Triangle",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Pascal's Triangle is a triangular array of numbers where each number is the sum of the two numbers directly above it. The first row is 1, and each subsequent row starts and ends with 1.  The challenge is to generate the first *n* rows of Pascal's Triangle.",
+    "optimal_solution": "The optimal solution uses dynamic programming to avoid redundant calculations.  Instead of calculating each element individually, we build the triangle row by row, leveraging the fact that each element is the sum of the two elements directly above it in the previous row. This approach has a time complexity of O(n^2) and a space complexity of O(n), representing a significant improvement over recursive solutions which suffer from repeated computations.  The algorithm iteratively builds each row, using the previous row to calculate the current row's values."
+  },
+  {
+    "id": 143,
+    "title": "Pascal's Triangle II",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "description": "Given an integer rowIndex, return the rowIndexth (0-indexed) row of the Pascal's triangle.  In Pascal's triangle, each number is the sum of the two numbers directly above it.",
+    "optimal_solution": "The optimal solution utilizes dynamic programming principles but avoids unnecessary computations. Instead of generating the entire Pascal's triangle, we only calculate the required row.  We can iteratively build the current row from the previous row.  Specifically, each element in the current row (except the first and last, which are always 1) is the sum of the element directly above it and the element to its left in the previous row. This reduces space complexity to O(k) where k is the rowIndex, as we only need to store the current and previous rows."
+  },
+  {
+    "id": 144,
+    "title": "Roman to Integer",
+    "difficulty": "Easy",
+    "category": "Math",
+    "description": "The Roman to Integer problem involves converting a Roman numeral string (e.g., \"IX\", \"LVIII\", \"MCMXCIV\") into its corresponding integer representation. Roman numerals use a combination of letters (I, V, X, L, C, D, M) to represent numbers.  The values of these letters are: I=1, V=5, X=10, L=50, C=100, D=500, M=1000.  A smaller numeral placed before a larger numeral indicates subtraction (e.g., IV = 4, IX = 9), while a smaller numeral placed after a larger numeral indicates addition (e.g., VI = 6, XI = 11).",
+    "optimal_solution": "The most efficient approach uses a single pass through the Roman numeral string from left to right.  Maintain a running total.  For each numeral, compare it to the next numeral. If the current numeral is smaller than the next, subtract its value from the total; otherwise, add its value. This handles the subtractive cases efficiently without needing extra lookups or complex conditional logic.  This approach has a time complexity of O(n), where n is the length of the Roman numeral string, and a space complexity of O(1)."
+  },
+  {
+    "id": 145,
+    "title": "Valid Palindrome",
+    "difficulty": "Easy",
+    "category": "Strings",
+    "description": "Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring case.  A palindrome is a sequence that reads the same backwards as forwards.",
+    "optimal_solution": "Use two pointers, one at the beginning and one at the end of the string.  Move the pointers towards the center, skipping non-alphanumeric characters. At each step, compare the characters (converted to lowercase) pointed to by the two pointers. If they are different, it's not a palindrome. If the pointers cross, it's a palindrome.  This approach has a time complexity of O(n), where n is the length of the string, and a space complexity of O(1)."
+  },
+  {
+    "id": 146,
+    "title": "Implement Queue using Stacks",
+    "difficulty": "Easy",
+    "category": "Stacks",
+    "description": "Implement a queue data structure using only stacks.  A queue follows FIFO (First-In, First-Out) ordering, while stacks follow LIFO (Last-In, First-Out) ordering.  The challenge is to mimic queue behavior using the limited operations available with stacks (push, pop, peek, isEmpty).  Your implementation should support the standard queue operations: `enqueue` (add an element to the rear), `dequeue` (remove and return the element from the front), `peek` (view the element at the front without removing it), and `isEmpty` (check if the queue is empty).",
+    "optimal_solution": "The optimal solution uses two stacks.  One stack (`stack1`) is used for enqueuing elements.  When dequeuing, if `stack2` (the second stack) is empty, all elements are moved from `stack1` to `stack2`.  This reversal effectively reverses the order, making the first element enqueued the first element dequeued.  Dequeuing then simply involves popping from `stack2`.  This approach ensures that `dequeue` operations have an amortized time complexity of O(1), even though individual dequeue operations might take O(n) in the worst case (when `stack2` is empty).  Using a single stack would lead to significantly less efficient `dequeue` operations."
+  },
+  {
+    "id": 147,
+    "title": "Implement Stack using Queues",
+    "difficulty": "Easy",
+    "category": "Queues",
+    "description": "Implement a stack data structure using only queues.  A stack follows the Last-In, First-Out (LIFO) principle, while a queue follows the First-In, First-Out (FIFO) principle. The challenge lies in mimicking LIFO behavior using FIFO structures.  You need to implement the `push`, `pop`, `top`, and `empty` methods for the stack.",
+    "optimal_solution": "Use two queues.  For `push`, enqueue the new element into queue1. Then, dequeue all elements from queue1 and enqueue them into queue2, except for the last element (the newly pushed one). Finally, swap queue1 and queue2. For `pop`, dequeue the front element from queue1 (which is the top element). For `top`, peek at the front element of queue1.  This approach ensures that the last element enqueued is always at the front of queue1, maintaining the LIFO order.  `empty` simply checks if queue1 is empty. This solution has a time complexity of O(n) for push and O(1) for pop, top, and empty in the worst case.  While not strictly O(1) for all operations, it's significantly more efficient than using a single queue and avoids the complexities associated with more intricate single-queue solutions."
+  },
+  {
+    "id": 148,
+    "title": "Power of Two",
+    "difficulty": "Easy",
+    "category": "Bit Manipulation",
+    "description": "Given an integer n, determine if it is a power of two.  A power of two is a number of the form 2<sup>k</sup> where k is a non-negative integer.  For example, 1, 2, 4, 8, 16 are powers of two.",
+    "optimal_solution": "The most efficient approach is to leverage bit manipulation.  A power of two in binary representation has only one bit set to 1.  Therefore, we can use the bitwise AND operation (`&`) with `n - 1`. If `n` is a power of two, `n & (n - 1)` will always be 0.  This is because subtracting 1 from a power of two flips the least significant bit from 1 to 0 and sets all less significant bits to 1. The AND operation will then clear all bits.  This check is significantly faster than iterative or recursive solutions.  Handle the edge case of n=0 separately, as 0 is not a power of two."
+  },
+  {
+    "id": 149,
+    "title": "Power of Three",
+    "difficulty": "Easy",
+    "category": "Math",
+    "description": "Given an integer n, determine if it is a power of three.  A power of three is a number of the form 3<sup>i</sup> (i >= 0, i is an integer). For example, 27 is a power of three (3<sup>3</sup>), but 12 is not.  You should solve this problem without using loops or recursion.",
+    "optimal_solution": "The optimal solution leverages the properties of logarithms and the fact that only powers of three can be expressed as 3<sup>i</sup> where i is an integer.  We can take the logarithm base 3 of n.  If n is a power of three, the result will be an integer. However, directly calculating log base 3 is inefficient.  Instead, we can use the change of base formula and calculate log<sub>3</sub>(n) = log<sub>10</sub>(n) / log<sub>10</sub>(3).  Since floating-point arithmetic introduces precision issues, this approach is not perfectly reliable.\n\nA more robust and efficient solution involves repeatedly dividing n by 3 until it becomes 1. If at any point the remainder is non-zero, n is not a power of three.  However, this requires a loop. A more elegant solution utilizes the fact that in many programming languages, there is a largest integer that can be represented. We can find the largest power of 3 that fits within this range and check if n is a divisor of this number.  If it is, n is a power of 3.  This eliminates the need for loops or recursion.  The largest power of 3 that fits within a 32-bit signed integer is 3<sup>19</sup> = 1162261467.  Therefore, n is a power of three if and only if  n > 0 and 1162261467 % n == 0.\n\nTherefore, the best solution is a one-liner check utilizing this pre-calculated largest power of three."
+  },
+  {
+    "id": 150,
+    "title": "Power of Four",
+    "difficulty": "Easy",
+    "category": "Bit Manipulation",
+    "description": "Given an integer n, determine if it is a power of four.  A power of four is a number of the form 4<sup>x</sup> where x is a non-negative integer. For example, 1, 4, 16, 64, etc. are powers of four.",
+    "optimal_solution": "The optimal solution leverages bit manipulation.  A power of four will always have only one bit set, and that bit will be at an even position (0-indexed).  Therefore, we can check if  `n > 0` and `(n & (n - 1)) == 0` (to ensure only one bit is set) and `(n & 0x55555555) == n` (to ensure the bit is at an even position).  This approach avoids the use of loops and logarithms, making it significantly faster. The hexadecimal constant `0x55555555` represents a number with bits set at all even positions.  The bitwise AND operation (`&`) checks if only those even-positioned bits are set in `n`.  If all three conditions are true, then `n` is a power of four."
+  }
+]
