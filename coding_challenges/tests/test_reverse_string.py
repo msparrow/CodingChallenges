@@ -1,4 +1,3 @@
-```python
 import pytest
 from solutions.solution_123 import reverse_string  # Replace with your actual solution file path
 

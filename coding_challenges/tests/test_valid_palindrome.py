@@ -1,4 +1,3 @@
-```python
 import pytest
 from solutions.solution_145 import is_palindrome
 
@@ -76,5 +75,3 @@ test_cases = [
 @pytest.mark.parametrize("s, expected", test_cases)
 def test_is_palindrome(s, expected):
     assert is_palindrome(s) == expected
-
-```

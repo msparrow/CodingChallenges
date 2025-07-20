@@ -1,6 +1,5 @@
-```python
 import pytest
-from solutions.solution_139 import twoSum
+from solutions.solution_139 import two_sum as twoSum
 
 # Test cases for Two Sum II - Input Array Is Sorted
 

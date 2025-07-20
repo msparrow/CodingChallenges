@@ -1,3 +1,3 @@
-def myAtoi(s: str) -> int:
+def my_atoi(s: str) -> int:
     # Your solution here
     pass

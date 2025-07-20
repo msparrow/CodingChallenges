@@ -1,4 +1,3 @@
-```python
 import pytest
 from solutions.solution_138 import isAnagram
 
@@ -94,4 +93,3 @@ test_cases = [
 @pytest.mark.parametrize("s1, s2, expected", test_cases)
 def test_isAnagram(s1, s2, expected):
     assert isAnagram(s1, s2) == expected
-

@@ -1,4 +1,3 @@
-```python
 import pytest
 from solutions.solution_134 import singleNumber  # Assuming your solution is in this file
 

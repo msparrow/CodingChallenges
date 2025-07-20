@@ -1,3 +1,2 @@
-def max_profit(prices):
-    # Your solution here
+def maxProfit(prices):
     pass

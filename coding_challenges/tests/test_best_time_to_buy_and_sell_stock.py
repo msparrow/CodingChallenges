@@ -1,4 +1,3 @@
-```python
 import pytest
 from solutions.solution_121 import max_profit
 
@@ -65,5 +64,3 @@ test_cases = [
 @pytest.mark.parametrize("prices, expected", test_cases)
 def test_max_profit(prices, expected):
     assert max_profit(prices) == expected
-
-```

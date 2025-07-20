@@ -1,3 +1,3 @@
-def single_number(nums):
+def singleNumber(nums):
     # Your solution here
     pass

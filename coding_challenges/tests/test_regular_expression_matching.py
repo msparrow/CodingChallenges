@@ -1,4 +1,3 @@
-
 import pytest
 from solutions.solution_104 import isMatch
 
@@ -68,5 +67,3 @@ test_cases = [
 @pytest.mark.parametrize("s, p, expected", test_cases)
 def test_isMatch(s, p, expected):
     assert isMatch(s, p) == expected
-
-```

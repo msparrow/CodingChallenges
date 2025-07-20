@@ -1,6 +1,6 @@
 
 import pytest
-from solutions.solution_148 import is_power_of_two
+from solutions.solution_148 import is_power_of_two_bitwise as is_power_of_two
 
 # Test cases for is_power_of_two function
 

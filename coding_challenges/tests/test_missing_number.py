@@ -1,6 +1,6 @@
 
 import pytest
-from solutions.solution_130 import missing_number
+from solutions.solution_130 import missingNumber_sum as missing_number
 
 pytest_plugins = ['pytester']
 

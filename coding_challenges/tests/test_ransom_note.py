@@ -1,6 +1,6 @@
 
 import pytest
-from solutions.solution_132 import canConstruct
+from solutions.solution_132 import can_construct_ransom_note as canConstruct
 
 # Test cases for canConstruct function
 

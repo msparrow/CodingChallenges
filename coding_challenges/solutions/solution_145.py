@@ -1,5 +1,5 @@
 import re
 
-def is_valid_palindrome(s):
+def is_palindrome(s):
     # Your solution here
     pass

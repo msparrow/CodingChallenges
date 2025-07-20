@@ -1,4 +1,3 @@
-```python
 import pytest
 from solutions.solution_126 import isSubtree
 
@@ -93,4 +92,3 @@ test_cases = [
 @pytest.mark.parametrize("root1, root2, expected", test_cases)
 def test_isSubtree(root1, root2, expected):
     assert isSubtree(root1, root2) == expected
-

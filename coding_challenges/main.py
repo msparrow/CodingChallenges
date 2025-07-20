@@ -2,12 +2,15 @@ import sys
 import json
 import subprocess
 import os
+import threading
+import signal
 import google.generativeai as genai
 from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QListWidget, QListWidgetItem, QWidget,
-    QVBoxLayout, QHBoxLayout, QLabel, QComboBox, QPushButton, QTextEdit
+    QVBoxLayout, QHBoxLayout, QLabel, QComboBox, QPushButton, QTextEdit, QLineEdit
 )
 from PyQt5.QtGui import QSyntaxHighlighter, QTextCharFormat, QColor, QFont, QKeyEvent
+from PyQt5.QtCore import QRegExp
 from PyQt5.QtCore import Qt
 
 class CodeEditor(QTextEdit):
@@ -18,40 +21,112 @@ class CodeEditor(QTextEdit):
             super().keyPressEvent(event)
 
 class PythonHighlighter(QSyntaxHighlighter):
-    def __init__(self, parent):
-        super().__init__(parent)
-        self.highlighting_rules = []
+    """
+    A syntax highlighter for Python code.
+    """
+    def __init__(self, parent=None):
+        super(PythonHighlighter, self).__init__(parent)
 
-        # Keywords
-        keyword_format = QTextCharFormat()
-        keyword_format.setForeground(QColor("blue"))
-        keyword_format.setFontWeight(QFont.Bold)
-        keywords = ["def", "class", "if", "else", "elif", "for", "while", "return", "in", "and", "or", "not", "is", "None", "True", "False", "try", "except", "finally", "with", "as", "import", "from", "pass", "break", "continue"]
+        self.highlightingRules = []
+
+        # Keyword format
+        keywordFormat = QTextCharFormat()
+        keywordFormat.setForeground(QColor("#CF8E6E"))
+        keywordFormat.setFontWeight(QFont.Bold)
+        keywords = [
+            r'\bbreak\b', r'\bcontinue\b', r'\bdef\b', r'\belif\b',
+            r'\belse\b', r'\bexcept\b', r'\bfinally\b', r'\bfor\b',
+            r'\bfrom\b', r'\bglobal\b', r'\bif\b', r'\bimport\b',
+            r'\bin\b', r'\bis\b', r'\blambda\b', r'\bnonlocal\b',
+            r'\bnot\b', r'\bor\b', r'\bpass\b', r'\braise\b',
+            r'\breturn\b', r'\btry\b', r'\bwhile\b', r'\bwith\b',
+            r'\byield\b', r'\bclass\b', r'\bas\b', r'\band\b',
+            r'\bassert\b', r'\bdel\b', r'\bNone\b', r'\bTrue\b',
+            r'\bFalse\b'
+        ]
         for word in keywords:
-            self.highlighting_rules.append((f"\\b{word}\\b", keyword_format))
+            pattern = QRegExp(word)
+            self.highlightingRules.append((pattern, keywordFormat))
 
-        # Strings
-        string_format = QTextCharFormat()
-        string_format.setForeground(QColor("green"))
-        self.highlighting_rules.append(("\"[^\"]*\"", string_format))
-        self.highlighting_rules.append(("'[^']*'", string_format))
+        # 'self' format
+        selfFormat = QTextCharFormat()
+        selfFormat.setForeground(QColor("#94558D"))
+        selfFormat.setFontWeight(QFont.Bold)
+        self.highlightingRules.append((QRegExp(r'\bself\b'), selfFormat))
 
-        # Comments
-        comment_format = QTextCharFormat()
-        comment_format.setForeground(QColor("red"))
-        self.highlighting_rules.append(("#[^\n]*", comment_format))
+        # Decorator format
+        decoratorFormat = QTextCharFormat()
+        decoratorFormat.setForeground(QColor("#BBB529"))
+        self.highlightingRules.append((QRegExp(r'@[A-Za-z0-9_]+'), decoratorFormat))
+
+        # Single-line comment format
+        singleLineCommentFormat = QTextCharFormat()
+        singleLineCommentFormat.setForeground(QColor("#7D8C93"))
+        self.highlightingRules.append((QRegExp(r'#[^\n]*'), singleLineCommentFormat))
+
+        # Quotation format for single-line strings
+        quotationFormat = QTextCharFormat()
+        quotationFormat.setForeground(QColor("#6A8759"))
+        self.highlightingRules.append((QRegExp(r'"[^"\\]*"'), quotationFormat))
+        self.highlightingRules.append((QRegExp(r"'[^'\\]*'",), quotationFormat))
+
+        # Function and class name format
+        functionFormat = QTextCharFormat()
+        functionFormat.setForeground(QColor("#FFC66D"))
+        self.highlightingRules.append((QRegExp(r'\b[A-Za-z0-9_]+(?=\()'), functionFormat))
 
         # Numbers
-        number_format = QTextCharFormat()
-        number_format.setForeground(QColor("purple"))
-        self.highlighting_rules.append(("\\b[0-9]+\\b", number_format))
+        numberFormat = QTextCharFormat()
+        numberFormat.setForeground(QColor("#6897BB"))
+        self.highlightingRules.append((QRegExp(r'\b[0-9]+\.?[0-9]*\b'), numberFormat))
+
+        # Multi-line strings (triple quotes)
+        self.tri_single = (QRegExp(r"'''"), 1, quotationFormat)
+        self.tri_double = (QRegExp(r'"""'), 2, quotationFormat)
 
     def highlightBlock(self, text):
-        for pattern, format in self.highlighting_rules:
-            for match in __import__("re").finditer(pattern, text):
-                self.setFormat(match.start(), match.end() - match.start(), format)
+        """
+        Applies syntax highlighting to the given block of text.
+        """
+        # Apply single-line rules
+        for pattern, format in self.highlightingRules:
+            expression = pattern
+            index = expression.indexIn(text)
+            while index >= 0:
+                length = expression.matchedLength()
+                self.setFormat(index, length, format)
+                index = expression.indexIn(text, index + length)
+
+        self.setCurrentBlockState(0)
+
+        # Handle multi-line strings ('''...''')
+        self.apply_multiline_rule(text, self.tri_single[0], 1, self.tri_single[2])
+        # Handle multi-line strings ("""...")
+        self.apply_multiline_rule(text, self.tri_double[0], 2, self.tri_double[2])
+
+    def apply_multiline_rule(self, text, delimiter, state, format):
+        """
+        Helper function to apply rules for multi-line constructs.
+        """
+        startIndex = 0
+        if self.previousBlockState() != state:
+            startIndex = delimiter.indexIn(text)
+
+        while startIndex >= 0:
+            endIndex = delimiter.indexIn(text, startIndex + 1)
+            if endIndex == -1:
+                self.setCurrentBlockState(state)
+                length = len(text) - startIndex
+            else:
+                length = endIndex - startIndex + delimiter.matchedLength()
+            
+            self.setFormat(startIndex, length, format)
+            startIndex = delimiter.indexIn(text, startIndex + length)
+
+
 
 class ChallengeStatus:
+
     NOT_STARTED = "Not Started"
     INCOMPLETE = "Incomplete"
     COMPLETED = "Completed"
@@ -123,6 +198,11 @@ class CodingChallengesApp(QMainWindow):
 
         left_layout.addLayout(filter_layout)
 
+        self.search_bar = QLineEdit()
+        self.search_bar.setPlaceholderText("Search by name...")
+        self.search_bar.textChanged.connect(self.filter_challenges)
+        left_layout.addWidget(self.search_bar)
+
         self.challenge_list = QListWidget()
         self.challenge_list.currentRowChanged.connect(self.display_challenge)
         left_layout.addWidget(self.challenge_list)
@@ -157,6 +237,11 @@ class CodingChallengesApp(QMainWindow):
         self.solution_button = QPushButton("Ask Gemini for Solution")
         self.solution_button.clicked.connect(self.ask_gemini_for_solution)
         button_layout.addWidget(self.solution_button)
+
+        self.hint_button = QPushButton("Show Hint")
+        self.hint_button.clicked.connect(self.ask_gemini_for_hint)
+        button_layout.addWidget(self.hint_button)
+
         right_layout.addLayout(button_layout)
 
         self.test_results = QTextEdit()
@@ -196,10 +281,12 @@ class CodingChallengesApp(QMainWindow):
             difficulty_filter_val = self.difficulty_filter.currentText()
             category_filter_val = self.category_filter.currentText()
             status_filter_val = self.status_filter.currentText()
+            search_text = self.search_bar.text().lower()
 
             if (difficulty_filter_val == "All" or difficulty == difficulty_filter_val) and \
                (category_filter_val == "All" or challenge["category"] == category_filter_val) and \
-               (status_filter_val == "All" or challenge_status == status_filter_val):
+               (status_filter_val == "All" or challenge_status == status_filter_val) and \
+               (search_text in challenge["title"].lower()):
                 self.add_challenge_to_list(challenge)
 
     def display_challenge(self, row):
@@ -294,6 +381,41 @@ class CodingChallengesApp(QMainWindow):
         else:
             self.test_results.setText("Solution not found.")
 
+    def ask_gemini_for_hint(self):
+        self.test_results.clear()
+        current_item = self.challenge_list.currentItem()
+        if not current_item:
+            return
+
+        challenge = current_item.data(1)
+        challenge_id = str(challenge["id"])
+
+        try:
+            with open("hints.json", "r") as f:
+                hints = json.load(f)
+        except FileNotFoundError:
+            hints = {}
+
+        if challenge_id in hints:
+            self.test_results.setText(hints[challenge_id])
+            return
+
+        if not self.model:
+            self.test_results.setText("Gemini API not configured. Please set the GEMINI_API_KEY environment variable.")
+            return
+
+        prompt = f'''Provide a subtle hint for the following Python problem:\n\nProblem Description:\n{challenge["description"]}'''
+
+        try:
+            response = self.model.generate_content(prompt)
+            hint_text = f"{response.text}\n"
+            hints[challenge_id] = hint_text
+            with open("hints.json", "w") as f:
+                json.dump(hints, f, indent=4)
+            self.test_results.setText(hint_text)
+        except Exception as e:
+            self.test_results.setText(f"Error generating hint: {e}")
+
     def update_challenge_list_item(self, challenge):
         item = self.challenge_items.get(challenge["id"])
         if not item:
@@ -312,6 +434,7 @@ class CodingChallengesApp(QMainWindow):
 
 
 if __name__ == "__main__":
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
     app = QApplication(sys.argv)
     main_app = CodingChallengesApp()
     main_app.show()
