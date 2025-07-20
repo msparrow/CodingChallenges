@@ -18,7 +18,17 @@ def to_list(node):
     (ListNode(1, ListNode(2, ListNode(3))), ListNode(4, ListNode(5, ListNode(6))), [1, 2, 3, 4, 5, 6]),
     (ListNode(4, ListNode(5, ListNode(6))), ListNode(1, ListNode(2, ListNode(3))), [1, 2, 3, 4, 5, 6]),
     (ListNode(1), ListNode(2), [1, 2]),
-    (ListNode(2), ListNode(1), [1, 2])
+    (ListNode(2), ListNode(1), [1, 2]),
+    (ListNode(1, ListNode(1, ListNode(1))), ListNode(1, ListNode(1, ListNode(1)))), [1, 1, 1, 1, 1, 1]),
+    (ListNode(-1, ListNode(0, ListNode(1))), ListNode(-2, ListNode(2, ListNode(3)))), [-2, -1, 0, 1, 2, 3]),
+    (ListNode(1, ListNode(2, ListNode(3))), ListNode(1, ListNode(2, ListNode(3)))), [1, 1, 2, 2, 3, 3]),
+    (ListNode(1, ListNode(3, ListNode(5, ListNode(7)))), ListNode(2, ListNode(4, ListNode(6, ListNode(8))))), [1, 2, 3, 4, 5, 6, 7, 8]),
+    (ListNode(1, ListNode(10, ListNode(20))), ListNode(5, ListNode(15, ListNode(25)))), [1, 5, 10, 15, 20, 25]),
+    (ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5))))), ListNode(6, ListNode(7, ListNode(8, ListNode(9, ListNode(10)))))), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
+    (ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(3))))), ListNode(1, ListNode(2, ListNode(2, ListNode(3))))), [1, 1, 1, 2, 2, 2, 3, 3]),
+    (ListNode(1), ListNode(1), [1, 1]),
+    (ListNode(1, ListNode(2)), ListNode(1, ListNode(2))), [1, 1, 2, 2]),
+    (ListNode(1, ListNode(2, ListNode(3))), ListNode(1, ListNode(2, ListNode(3)))), [1, 1, 2, 2, 3, 3])
 ])
 def test_merge_two_lists(list1, list2, expected):
     result_node = merge_two_lists(list1, list2)

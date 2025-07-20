@@ -12,7 +12,20 @@ def to_list(node):
     (ListNode(1, ListNode(2, ListNode(3, ListNode(3, ListNode(4, ListNode(4, ListNode(5))))))), [1, 2, 5]),
     (ListNode(1, ListNode(1, ListNode(1, ListNode(2, ListNode(3))))), [2, 3]),
     (None, []),
-    (ListNode(1, ListNode(1)), [])
+    (ListNode(1, ListNode(1)), []),
+    (ListNode(1, ListNode(2, ListNode(2, ListNode(3, ListNode(3, ListNode(3)))))), [1]),
+    (ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1))))), []),
+    (ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5))))), [1, 2, 3, 4, 5]),
+    (ListNode(-1, ListNode(0, ListNode(0, ListNode(0, ListNode(1, ListNode(1, ListNode(2))))))), [-1, 2]),
+    (ListNode(1, ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(4)))))), [2, 3]),
+    (ListNode(1, ListNode(2, ListNode(2, ListNode(2, ListNode(3, ListNode(3, ListNode(3, ListNode(4, ListNode(4, ListNode(4, ListNode(4))))))))))), [1]),
+    (ListNode(1, ListNode(1, ListNode(1, ListNode(2, ListNode(2, ListNode(2, ListNode(3, ListNode(3, ListNode(3))))))))), []),
+    (ListNode(1, ListNode(2, ListNode(3, ListNode(1, ListNode(2, ListNode(3)))))), [1, 2, 3, 1, 2, 3]),
+    (ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(2, ListNode(2, ListNode(2, ListNode(2)))))))), []),
+    (ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5, ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))))))), [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]),
+    (ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1)))))))))), []),
+    (ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(1, ListNode(2)))))))))), [2]),
+    (ListNode(1, ListNode(2, ListNode(2, ListNode(2, ListNode(2, ListNode(2, ListNode(2, ListNode(2, ListNode(2, ListNode(2)))))))))), [1])
 ])
 def test_delete_duplicates2(head, expected):
     result_node = delete_duplicates2(head)

@@ -6,4 +6,4 @@ class TreeNode:
 
 def build_tree2(inorder, postorder):
     # Your solution here
-    pass
+    return -1

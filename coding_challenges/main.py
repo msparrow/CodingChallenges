@@ -31,7 +31,7 @@ class PythonHighlighter(QSyntaxHighlighter):
 
         # Keyword format
         keywordFormat = QTextCharFormat()
-        keywordFormat.setForeground(QColor("#CF8E6E"))
+        keywordFormat.setForeground(QColor("#FF79C6"))
         keywordFormat.setFontWeight(QFont.Bold)
         keywords = [
             r'\bbreak\b', r'\bcontinue\b', r'\bdef\b', r'\belif\b',
@@ -50,34 +50,34 @@ class PythonHighlighter(QSyntaxHighlighter):
 
         # 'self' format
         selfFormat = QTextCharFormat()
-        selfFormat.setForeground(QColor("#94558D"))
+        selfFormat.setForeground(QColor("#BD93F9"))
         selfFormat.setFontWeight(QFont.Bold)
         self.highlightingRules.append((QRegExp(r'\bself\b'), selfFormat))
 
         # Decorator format
         decoratorFormat = QTextCharFormat()
-        decoratorFormat.setForeground(QColor("#BBB529"))
+        decoratorFormat.setForeground(QColor("#F1FA8C"))
         self.highlightingRules.append((QRegExp(r'@[A-Za-z0-9_]+'), decoratorFormat))
 
         # Single-line comment format
         singleLineCommentFormat = QTextCharFormat()
-        singleLineCommentFormat.setForeground(QColor("#7D8C93"))
+        singleLineCommentFormat.setForeground(QColor("#6272A4"))
         self.highlightingRules.append((QRegExp(r'#[^\n]*'), singleLineCommentFormat))
 
         # Quotation format for single-line strings
         quotationFormat = QTextCharFormat()
-        quotationFormat.setForeground(QColor("#6A8759"))
+        quotationFormat.setForeground(QColor("#50FA7B"))
         self.highlightingRules.append((QRegExp(r'"[^"\\]*"'), quotationFormat))
         self.highlightingRules.append((QRegExp(r"'[^'\\]*'",), quotationFormat))
 
         # Function and class name format
         functionFormat = QTextCharFormat()
-        functionFormat.setForeground(QColor("#FFC66D"))
+        functionFormat.setForeground(QColor("#8BE9FD"))
         self.highlightingRules.append((QRegExp(r'\b[A-Za-z0-9_]+(?=\()'), functionFormat))
 
         # Numbers
         numberFormat = QTextCharFormat()
-        numberFormat.setForeground(QColor("#6897BB"))
+        numberFormat.setForeground(QColor("#FFB86C"))
         self.highlightingRules.append((QRegExp(r'\b[0-9]+\.?[0-9]*\b'), numberFormat))
 
         # Multi-line strings (triple quotes)
@@ -136,6 +136,15 @@ class CodingChallengesApp(QMainWindow):
         super().__init__()
         self.setWindowTitle("Coding Challenges")
         self.setGeometry(100, 100, 1200, 800)
+
+        self.setStyleSheet("""
+            QWidget { background-color: #2E2E2E; color: #CCCCCC; }
+            QComboBox, QLineEdit, QTextEdit { background-color: #3E3E3E; color: #F2F2F2; }
+            QPushButton { background-color: #4A4A4A; color: #F2F2F2; border: 1px solid #6E6E6E; }
+            QPushButton:hover { background-color: #5A5A5A; border: 1px solid #8E8E8E; }
+            QListWidget { background-color: #3E3E3E; border: none; }
+            QListWidget::item:selected { background-color: #5A5A5A; }
+        """)
 
         self.challenges = self.load_challenges()
         self.progress = self.load_progress()

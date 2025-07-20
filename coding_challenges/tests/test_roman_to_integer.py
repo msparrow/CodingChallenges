@@ -16,7 +16,13 @@ from solutions.solution_107 import roman_to_int
     ("CD", 400),
     ("CM", 900),
     ("D", 500),
-    ("M", 1000)
+    ("M", 1000),
+    ("MMXXIV", 2024),
+    ("MMMCMXCIX", 3999),
+    ("IX", 9),
+    ("XIX", 19),
+    ("XLIX", 49),
+    ("XCIX", 99)
 ])
 def test_roman_to_int(s, expected):
     assert roman_to_int(s) == expected
