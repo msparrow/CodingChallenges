@@ -243,7 +243,7 @@ class CodingChallengesApp(QMainWindow):
         self.analyze_button.clicked.connect(self.analyze_with_gemini)
         button_layout.addWidget(self.analyze_button)
 
-        self.solution_button = QPushButton("Ask Gemini for Solution")
+        self.solution_button = QPushButton("Show Solution")
         self.solution_button.clicked.connect(self.ask_gemini_for_solution)
         button_layout.addWidget(self.solution_button)
 
